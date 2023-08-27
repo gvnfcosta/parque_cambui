@@ -1,0 +1,119 @@
+{
+  "project_info": {
+    "project_number": "860780974282",
+    "firebase_url": "https://pqcambui-41a18-default-rtdb.firebaseio.com",
+    "project_id": "pqcambui-41a18",
+    "storage_bucket": "pqcambui-41a18.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:860780974282:android:03305431fa8d77f520a433",
+        "android_client_info": {
+          "package_name": "br.com.dacost.parquecambui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "860780974282-uf2rj7tqapps2p69iuts3nsvfg1nadl3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAS3Q7SF9MNYYk9h8VHwMYwf8rJahEYrE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "860780974282-uf2rj7tqapps2p69iuts3nsvfg1nadl3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "860780974282-2a4er622ojlr1g2qclq0phr71t8g4d76.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:860780974282:android:3af57897d8ef04cd20a433",
+        "android_client_info": {
+          "package_name": "com.example.parque_cambui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "860780974282-uf2rj7tqapps2p69iuts3nsvfg1nadl3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAS3Q7SF9MNYYk9h8VHwMYwf8rJahEYrE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "860780974282-uf2rj7tqapps2p69iuts3nsvfg1nadl3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "860780974282-2a4er622ojlr1g2qclq0phr71t8g4d76.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:860780974282:android:38c82a805a32dab320a433",
+        "android_client_info": {
+          "package_name": "com.gmail.dacosta.apps.parquecambui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "860780974282-uf2rj7tqapps2p69iuts3nsvfg1nadl3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAS3Q7SF9MNYYk9h8VHwMYwf8rJahEYrE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "860780974282-uf2rj7tqapps2p69iuts3nsvfg1nadl3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "860780974282-2a4er622ojlr1g2qclq0phr71t8g4d76.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
