@@ -1,0 +1,72 @@
+name: parquecambui
+description: App para uso da Congregação Parque Cambuí.
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+version: 2.0.2
+
+environment:
+  sdk: ">=2.18.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  animated_text_kit: ^4.2.2
+  mask_text_input_formatter: ^2.4.0
+  intl: ^0.18.0
+  provider: ^6.0.5
+  flutter_localizations:
+    sdk: flutter
+  syncfusion_flutter_pdfviewer: ^20.4.42
+  dropdown_button2: ^1.7.1
+  http: ^0.13.3
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  path_provider: ^2.0.15
+
+  get: ^4.6.5
+  shared_preferences: ^2.0.18
+  flutter_launcher_icons: ^0.12.0
+  flutter_native_splash: ^2.2.19
+  # collection: ^1.17.1
+  firebase_core: ^2.15.0
+  firebase_messaging: ^14.6.5
+  another_flushbar: ^1.12.30
+  firebase_core_desktop: ^1.0.2
+
+flutter_native_splash:
+  color: "#3F51B5"
+  image: "dev_assets/PqCambuiSplash.png"
+  android: true
+  ios: true
+
+flutter_icons:
+  ios: true
+  remove_alpha_ios: true
+  image_path: "dev_assets/icon.png"
+  android: "launcher_icon"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "dev_assets/Icon_android.png"
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+
+  #   - images/a_dot_ham.jpeg
+
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 200
