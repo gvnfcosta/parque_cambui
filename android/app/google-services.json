@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:860780974282:android:03305431fa8d77f520a433",
         "android_client_info": {
-          "package_name": "br.com.dacost.parquecambui"
+          "package_name": "br.com.dacost.parque_cambui"
         }
       },
       "oauth_client": [
@@ -82,7 +82,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:860780974282:android:38c82a805a32dab320a433",
         "android_client_info": {
-          "package_name": "com.gmail.dacosta.apps.parquecambui"
+          "package_name": "com.gmail.dacosta.apps.parque_cambui"
         }
       },
       "oauth_client": [

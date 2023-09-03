@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.parqueCambui</string>
+	<string>com.example.parque_cambui</string>
 	<key>PROJECT_ID</key>
 	<string>pqcambui-41a18</string>
 	<key>STORAGE_BUCKET</key>
