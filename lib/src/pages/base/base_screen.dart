@@ -50,11 +50,11 @@ class _BaseScreenState extends State<BaseScreen> {
   String? token;
 
   Future<void> initializeFcm() async {
-    token = await messaging.getToken(
-        vapidKey:
-            'BI70t7lMsc44mXUX2X44YhXxFx-SA0R5r0r1cgagDUddGjzkSiCG064WF4m6-Epujltwk2uzCuh7BLZamuOjosA');
-    print(token);
-    setState(() {});
+    // token = await messaging.getToken(
+    //     vapidKey:
+    //         'BI70t7lMsc44mXUX2X44YhXxFx-SA0R5r0r1cgagDUddGjzkSiCG064WF4m6-Epujltwk2uzCuh7BLZamuOjosA');
+    // print(token);
+    // setState(() {});
 
     FirebaseMessaging.onMessage.listen((message) {
       if (message.notification != null) {

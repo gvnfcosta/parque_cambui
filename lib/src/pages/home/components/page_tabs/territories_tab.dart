@@ -283,7 +283,7 @@ class _TerritoriesGridWidget extends StatelessWidget {
     return territories.isEmpty
         ? Center(
             child: Text(
-            'Você não tem nenhum território',
+            'Não há nenhum território',
             style: Theme.of(context).textTheme.headlineSmall,
           ))
         : Padding(

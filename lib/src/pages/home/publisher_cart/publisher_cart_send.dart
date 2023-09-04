@@ -96,7 +96,6 @@ class _PublisherCartSendPageState extends State<PublisherCartSendPage> {
   }
 
   Future<void> _submitForm() async {
-    print(_formData['publisher']);
     _formData['initialDate'] = setDate;
     final isValid = formKey.currentState?.validate() ?? false;
 

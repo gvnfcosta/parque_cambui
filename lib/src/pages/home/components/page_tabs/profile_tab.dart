@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:parquecambui/src/pages/common_widgets/common_widgets.dart';
 import 'package:provider/provider.dart';
@@ -58,6 +59,13 @@ class _ProfileTabState extends State<ProfileTab> {
                   initialValue: auth.email,
                   icon: Icons.email,
                   label: 'Email',
+                ),
+                const SizedBox(height: 5),
+                CustomTextField(
+                  readOnly: true,
+                  initialValue: '2.3.0',
+                  icon: CupertinoIcons.bars,
+                  label: 'Versão',
                 ),
 
                 const SizedBox(height: 50),

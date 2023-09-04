@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:parquecambui/src/models/publisher_cart_model.dart';
-import 'package:parquecambui/src/pages/common_widgets/common_widgets.dart';
 import 'package:parquecambui/src/pages/home/publisher_cart/publisher_cart_screen.dart';
 import '../../../constants/app_customs.dart';
 import 'package:provider/provider.dart';
@@ -68,7 +67,7 @@ class PublisherCartTile extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                carts.publisher == ' '
+                                carts.publisher == 'sem_designação'
                                     ? 'Salão do Reino'
                                     : carts.publisher,
                                 style: const TextStyle(
@@ -111,17 +110,7 @@ class PublisherCartTile extends StatelessWidget {
                                       : Colors.indigo,
                                 ),
                               ),
-                              // Text(
-                              //   carts.publisher == ' '
-                              //       ? 'Salão do Reino'
-                              //       : "carts.publisher",
-                              //   style: const TextStyle(
-                              //     fontSize: 10,
-                              //     color: Colors.orange,
-                              //   ),
-                              //   textAlign: TextAlign.center,
-                              // ),
-                              carts.publisher != ' '
+                              carts.publisher != 'sem_designação'
                                   ? Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
@@ -129,9 +118,7 @@ class PublisherCartTile extends StatelessWidget {
                                           CrossAxisAlignment.center,
                                       children: [
                                         Text(
-                                          carts.publisher == ' '
-                                              ? 'Salão do Reino'
-                                              : carts.publisher,
+                                          carts.publisher,
                                           style: const TextStyle(
                                             fontSize: 11,
                                             color: Colors.orange,
@@ -158,7 +145,14 @@ class PublisherCartTile extends StatelessWidget {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        separator(),
+                                        const Text(
+                                          'Salão do Reino',
+                                          style: TextStyle(
+                                            fontSize: 12,
+                                            color: Colors.green,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                        ),
                                         Text(
                                           DateFormat(
                                                   "'Concluído em'\n d 'de' MMMM",

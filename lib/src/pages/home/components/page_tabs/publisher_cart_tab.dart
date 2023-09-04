@@ -72,7 +72,7 @@ class _PublisherCartTabState extends State<PublisherCartTab> {
       ..sort(((a, b) => b.finalDate.compareTo(a.finalDate)));
 
     final List<PublisherCart> availableCart = cart
-        .where((element) => element.publisher == 'Salão do Reino')
+        .where((element) => element.publisher == 'sem_designação')
         .toList()
       ..sort(((a, b) => a.finalDate.compareTo(b.finalDate)));
 
@@ -245,7 +245,7 @@ class CartsGridWidget extends StatelessWidget {
     return carts.isEmpty
         ? Center(
             child: Text(
-            'Você não tem nenhum carrinho',
+            'Não há nenhum carrinho',
             style: Theme.of(context).textTheme.headlineSmall,
             textAlign: TextAlign.center,
           ))

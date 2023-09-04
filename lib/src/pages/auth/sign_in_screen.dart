@@ -28,7 +28,7 @@ class _SignInScreenState extends State<SignInScreen> {
     FadeAnimatedText('Ministério'),
     FadeAnimatedText('Anúncios'),
     FadeAnimatedText('Territórios'),
-    FadeAnimatedText('Carrinho'),
+    FadeAnimatedText('Testemunho Público'),
     FadeAnimatedText('Congresso'),
     FadeAnimatedText('Assembléias'),
   ];

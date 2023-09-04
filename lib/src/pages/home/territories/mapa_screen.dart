@@ -31,8 +31,8 @@ class MapaScreen extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: 10,
-            top: 10,
+            left: 20,
+            top: 60,
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
