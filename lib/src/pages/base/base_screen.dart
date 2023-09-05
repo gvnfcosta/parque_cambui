@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:get/get.dart';
 import 'package:parquecambui/src/models/publicador_list.dart';
 import 'package:parquecambui/src/pages/base/check_user.dart';
 import 'package:parquecambui/src/pages/home/components/page_tabs/publisher_cart_tab.dart';
@@ -20,6 +21,8 @@ class BaseScreen extends StatefulWidget {
   State<BaseScreen> createState() => _BaseScreenState();
 }
 
+bool _isCart = false;
+
 Future<void> onBackgroundMessage(RemoteMessage message) async {
   print(message.data);
 }
@@ -35,9 +38,67 @@ class _BaseScreenState extends State<BaseScreen> {
     const HomeTab(),
     const MinisterioTab(),
     const AnunciosTab(),
+    const TerritoriesTab(),
+    const ProfileTab(),
+  ];
+
+  final List<Widget> tabsCart = [
+    const HomeTab(),
+    const MinisterioTab(),
+    const AnunciosTab(),
     const PublisherCartTab(),
     const TerritoriesTab(),
     const ProfileTab(),
+  ];
+
+  final List<BottomNavigationBarItem> navigations = [
+    const BottomNavigationBarItem(
+      icon: Icon(Icons.home),
+      label: 'Reuniões',
+    ),
+    const BottomNavigationBarItem(
+      icon: Icon(Icons.business_center),
+      label: 'Ministério',
+    ),
+    const BottomNavigationBarItem(
+      icon: Icon(Icons.list),
+      label: 'Anúncios',
+    ),
+    const BottomNavigationBarItem(
+      icon: Icon(Icons.map),
+      label: 'Territórios',
+    ),
+    const BottomNavigationBarItem(
+      icon: Icon(Icons.person),
+      label: 'Perfil',
+    ),
+  ];
+
+  final List<BottomNavigationBarItem> navigationsCart = [
+    const BottomNavigationBarItem(
+      icon: Icon(Icons.home),
+      label: 'Reuniões',
+    ),
+    const BottomNavigationBarItem(
+      icon: Icon(Icons.business_center),
+      label: 'Ministério',
+    ),
+    const BottomNavigationBarItem(
+      icon: Icon(Icons.list),
+      label: 'Anúncios',
+    ),
+    const BottomNavigationBarItem(
+      icon: Icon(Icons.kitchen_outlined),
+      label: 'Público',
+    ),
+    const BottomNavigationBarItem(
+      icon: Icon(Icons.map),
+      label: 'Territórios',
+    ),
+    const BottomNavigationBarItem(
+      icon: Icon(Icons.person),
+      label: 'Perfil',
+    ),
   ];
 
   @override
@@ -91,7 +152,10 @@ class _BaseScreenState extends State<BaseScreen> {
 
   @override
   Widget build(BuildContext context) {
-    String user = Provider.of<PublicadorList>(context).firstPub?.nome ?? '';
+    var firstPub = Provider.of<PublicadorList>(context).firstPub;
+    String user = firstPub?.nome ?? '';
+    bool isCart = (firstPub?.nivel ?? 0) >= 2;
+
     Timer(const Duration(seconds: 2), () {
       const Text('Aguarde');
     });
@@ -103,7 +167,7 @@ class _BaseScreenState extends State<BaseScreen> {
               PageView(
                   physics: const NeverScrollableScrollPhysics(),
                   controller: pageController, //indica qual a tela aberta
-                  children: tabs),
+                  children: isCart ? tabsCart : tabs),
               //  if (token != null) SelectableText(token!),
             ]),
             bottomNavigationBar: BottomNavigationBar(
@@ -120,32 +184,7 @@ class _BaseScreenState extends State<BaseScreen> {
                 selectedFontSize: 12,
                 unselectedItemColor: Colors.white.withAlpha(100),
                 unselectedFontSize: 11,
-                items: const [
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.home),
-                    label: 'Reuniões',
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.business_center),
-                    label: 'Ministério',
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.list),
-                    label: 'Anúncios',
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.kitchen_outlined),
-                    label: 'Carrinhos',
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.map),
-                    label: 'Territórios',
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.person),
-                    label: 'Perfil',
-                  ),
-                ]),
+                items: isCart ? navigationsCart : navigations),
           );
   }
 }

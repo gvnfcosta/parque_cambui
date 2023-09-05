@@ -32,6 +32,8 @@ class _ProfileTabState extends State<ProfileTab> {
   Widget build(BuildContext context) {
     Auth auth = Provider.of(context);
     String? userName = Provider.of<PublicadorList>(context).namePub;
+    String? privilegio =
+        Provider.of<PublicadorList>(context).firstPub?.privilegio;
 
     return Scaffold(
       appBar: AppBar(
@@ -59,6 +61,13 @@ class _ProfileTabState extends State<ProfileTab> {
                   initialValue: auth.email,
                   icon: Icons.email,
                   label: 'Email',
+                ),
+                const SizedBox(height: 5),
+                CustomTextField(
+                  readOnly: true,
+                  initialValue: privilegio,
+                  icon: Icons.person,
+                  label: 'Nível',
                 ),
                 const SizedBox(height: 5),
                 CustomTextField(

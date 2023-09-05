@@ -147,7 +147,7 @@ class _PublisherCartBackState extends State<PublisherCartBack> {
         backgroundColor: CustomColors.editAppBarBackgroundColor,
         elevation: 0,
         centerTitle: true,
-        title: const Text('Devolver Carrinho'),
+        title: const Text('Devolver Equipamento'),
       ),
       body: SizedBox(
         height: deviceSize.height * 1.1,
@@ -230,7 +230,7 @@ class _PublisherCartBackState extends State<PublisherCartBack> {
                                   initialValue:
                                       _formData['cartName']?.toString(),
                                   decoration: InputDecoration(
-                                      labelText: 'Carrinho',
+                                      labelText: 'Equipamento',
                                       labelStyle: const TextStyle(fontSize: 12),
                                       border: OutlineInputBorder(
                                           borderRadius:

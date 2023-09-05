@@ -7,7 +7,6 @@ import '../../models/auth.dart';
 
 enum AuthMode { signup, login }
 
-Auth auth = Auth();
 bool _isWeb = AdminController().isWeb;
 
 class AuthForm extends StatefulWidget {

@@ -126,7 +126,7 @@ class _PublisherCartFormPageState extends State<PublisherCartFormPage> {
       appBar: AppBar(
         backgroundColor: Colors.indigo,
         centerTitle: true,
-        title: const Text('Edição de Carrinhos'),
+        title: const Text('Edição de Equipamentos'),
         actions: [
           GestureDetector(
             onTap: () => _submitForm(),
@@ -210,7 +210,7 @@ class _PublisherCartFormPageState extends State<PublisherCartFormPage> {
                                 readOnly: false,
                                 initialValue: _formData['cartName']?.toString(),
                                 decoration: InputDecoration(
-                                    //      labelText: 'Nome do Carrinho',
+                                    //      labelText: 'Nome do Equipamento',
                                     labelStyle: const TextStyle(fontSize: 12),
                                     border: OutlineInputBorder(
                                         borderRadius:

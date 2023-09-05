@@ -170,7 +170,7 @@ class _PublisherCartSendPageState extends State<PublisherCartSendPage> {
         backgroundColor: Colors.blueGrey.shade800,
         elevation: 0,
         centerTitle: true,
-        title: const Text('Solicitar Carrinho'),
+        title: const Text('Solicitar Equipamento'),
       ),
       body: SizedBox(
         height: deviceSize.height,
@@ -252,7 +252,7 @@ class _PublisherCartSendPageState extends State<PublisherCartSendPage> {
                                   initialValue:
                                       _formData['cartName']?.toString(),
                                   decoration: InputDecoration(
-                                      labelText: 'Carrinho',
+                                      labelText: 'Equipamento',
                                       labelStyle: const TextStyle(fontSize: 12),
                                       border: OutlineInputBorder(
                                           borderRadius:

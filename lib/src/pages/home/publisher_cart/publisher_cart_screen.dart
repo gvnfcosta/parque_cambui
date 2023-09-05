@@ -31,7 +31,7 @@ class PublisherCartScreen extends StatelessWidget {
       backgroundColor: Colors.white.withAlpha(230),
       appBar: AppBar(
         backgroundColor: CustomColors.editAppBarBackgroundColor,
-        title: const Text('Transferir Carrinho'),
+        title: const Text('Transferir Equipamento'),
         actions: isAdmin && tipoTela == 2
             ? [
                 GestureDetector(
@@ -98,7 +98,7 @@ class PublisherCartScreen extends StatelessWidget {
                         children: [
                           Expanded(
                             child: CustomTextField(
-                                label: 'Carrinho',
+                                label: 'Equipamento',
                                 initialValue: cart.cartName,
                                 icon: Icons.kitchen_outlined,
                                 readOnly: readOnly),
@@ -166,7 +166,7 @@ class PublisherCartScreen extends StatelessWidget {
                                               MainAxisAlignment.spaceEvenly,
                                           children: [
                                             Text(
-                                              'DEVOLVER CARRINHO',
+                                              'DEVOLVER EQUIPAMENTO',
                                               style: TextStyle(
                                                   fontSize: 12,
                                                   letterSpacing: 2),
@@ -206,7 +206,7 @@ class PublisherCartScreen extends StatelessWidget {
                                                           .spaceEvenly,
                                                   children: [
                                                     Text(
-                                                      'ENVIAR CARRINHO ',
+                                                      'ENVIAR EQUIPAMENTO ',
                                                       style: TextStyle(
                                                           fontSize: 14,
                                                           letterSpacing: 2),
@@ -244,7 +244,7 @@ class PublisherCartScreen extends StatelessWidget {
                                                           .spaceEvenly,
                                                   children: [
                                                     Text(
-                                                      'SOLICITAR CARRINHO ',
+                                                      'SOLICITAR EQUIPAMENTO ',
                                                       style: TextStyle(
                                                           fontSize: 14,
                                                           letterSpacing: 2),
@@ -279,7 +279,7 @@ class PublisherCartScreen extends StatelessWidget {
                                                   MainAxisAlignment.spaceEvenly,
                                               children: [
                                                 Text(
-                                                  'ENVIAR CARRINHO ',
+                                                  'ENVIAR EQUIPAMENTO ',
                                                   style: TextStyle(
                                                       fontSize: 14,
                                                       letterSpacing: 2),

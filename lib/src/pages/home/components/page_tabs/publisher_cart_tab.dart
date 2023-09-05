@@ -33,26 +33,26 @@ class _PublisherCartTabState extends State<PublisherCartTab> {
     const Tab(
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [Text('Meu'), Text('Carrinho')])),
+            children: [Text('Meu'), Text('Equipamento')])),
     const Tab(
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [Text('Carrinho'), Text('Disponível')])),
+            children: [Text('Equipamento'), Text('Disponível')])),
     const Tab(
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [Text('Todos os'), Text('Carrinhos')])),
+            children: [Text('Todos os'), Text('Equipamentos')])),
   ];
 
   final List<Widget> dirigenteTab = [
     const Tab(
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [Text('Meu'), Text('Carrinho')])),
+            children: [Text('Meu'), Text('Equipamento')])),
     const Tab(
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [Text('Carrinho'), Text('Disponível')])),
+            children: [Text('Equipamento'), Text('Disponível')])),
   ];
 
   @override
@@ -189,7 +189,7 @@ class _PublisherCartTabState extends State<PublisherCartTab> {
                       : const Expanded(
                           child: TabBar(
                             tabs: [
-                              Tab(text: 'Meu Carrinho'),
+                              Tab(text: 'Meu Equipamento'),
                             ],
                             indicatorWeight: 0.1,
                             indicatorColor: Colors.grey,
@@ -245,7 +245,7 @@ class CartsGridWidget extends StatelessWidget {
     return carts.isEmpty
         ? Center(
             child: Text(
-            'Não há nenhum carrinho',
+            'Não há nenhum Equipamento',
             style: Theme.of(context).textTheme.headlineSmall,
             textAlign: TextAlign.center,
           ))

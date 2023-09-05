@@ -45,7 +45,10 @@ class PublisherCartTile extends StatelessWidget {
                         //Imagem
                         SizedBox(
                           height: 120,
-                          child: Image.asset('assets/JwCart.png',
+                          child: Image.asset(
+                              carts.cartName.substring(0, 7) == "Display"
+                                  ? 'assets/JwDisplay.jpg'
+                                  : 'assets/JwCart.png',
                               fit: BoxFit.contain),
                         ),
                         Padding(
@@ -89,7 +92,10 @@ class PublisherCartTile extends StatelessWidget {
                           //child:
                           SizedBox(
                             height: 120,
-                            child: Image.asset('assets/JwCart.png',
+                            child: Image.asset(
+                                carts.cartName.substring(0, 7) == "Display"
+                                    ? 'assets/JwDisplay.jpg'
+                                    : 'assets/JwCart.png',
                                 fit: BoxFit.contain),
                           ),
                           //   ),qq

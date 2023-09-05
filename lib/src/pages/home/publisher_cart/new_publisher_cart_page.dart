@@ -117,7 +117,7 @@ class _NewPublisherCartPageState extends State<NewPublisherCartPage> {
         backgroundColor: CustomColors.appBarBackgroundColor,
         elevation: 0,
         centerTitle: true,
-        title: const Text('Cadastro de Carrinhos'),
+        title: const Text('Cadastro de Equipamentos'),
         actions: [
           IconButton(onPressed: _submitForm, icon: CustomIcons.checkIcon)
         ],
@@ -162,7 +162,7 @@ class _NewPublisherCartPageState extends State<NewPublisherCartPage> {
                         child: Column(
                           //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            //NOME DO CARRINHO
+                            //NOME DO Equipamento
                             Expanded(
                               child: Padding(
                                 padding: const EdgeInsets.only(left: 18),
@@ -174,7 +174,7 @@ class _NewPublisherCartPageState extends State<NewPublisherCartPage> {
                                       initialValue:
                                           _formData['cartName']?.toString(),
                                       decoration: InputDecoration(
-                                          labelText: 'Nome do Carrinho',
+                                          labelText: 'Nome do Equipamento',
                                           labelStyle:
                                               const TextStyle(fontSize: 12),
                                           border: OutlineInputBorder(
