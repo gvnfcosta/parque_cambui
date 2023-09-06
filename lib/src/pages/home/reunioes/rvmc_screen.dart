@@ -34,7 +34,7 @@ class _RvmcScreenState extends State<RvmcScreen> {
     if (reuniaoSelecionada == null) return const SizedBox.shrink();
 
     if (usuario.isNotEmpty) {
-      isAdmin = usuario.first.nivel >= 4;
+      isAdmin = usuario.first.nivel == 5 || usuario.first.nivel >= 7;
     }
 
     return Scaffold(

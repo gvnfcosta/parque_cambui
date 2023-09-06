@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 
 import 'package:parquecambui/src/models/publicador_list.dart';
@@ -39,11 +37,11 @@ class _CheckUserState extends State<CheckUser> {
                     Image.asset('assets/icone.png'),
                     const SizedBox(height: 10),
                     Text(
-                      'Buscando Usuário...',
+                      'Buscando Usuário...\nContate o Administrador',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 18,
-                        color: Colors.grey.shade400,
+                        color: Colors.grey.shade500,
                       ),
                     ),
                     const LinearProgressIndicator(

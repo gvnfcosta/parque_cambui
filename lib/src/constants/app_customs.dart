@@ -66,9 +66,9 @@ abstract class CustomPadding {
 }
 
 abstract class UserLevel {
-  static const int inativo = 0;
-  static const int geral = 1;
-  static const int publicador = 2;
+  static const int padrao = 0;
+  static const int publicador = 1;
+  static const int testemunhoPublico = 2;
   static const int dirigente = 3;
   static const int territories = 4;
   static const int reuniaoVidaMinisterio = 5;

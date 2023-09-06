@@ -34,7 +34,7 @@ class _ReuniaoPublicaScreenState extends State<ReuniaoPublicaScreen> {
     if (reuniaoSelecionada == null) return const SizedBox.shrink();
 
     if (usuario.isNotEmpty) {
-      isAdmin = usuario.first.nivel >= 5;
+      isAdmin = usuario.first.nivel == 6 || usuario.first.nivel >= 7;
     }
 
     return Scaffold(

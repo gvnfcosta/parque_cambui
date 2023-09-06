@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:get/get.dart';
 import 'package:parquecambui/src/models/publicador_list.dart';
 import 'package:parquecambui/src/pages/base/check_user.dart';
 import 'package:parquecambui/src/pages/home/components/page_tabs/publisher_cart_tab.dart';
@@ -21,8 +20,6 @@ class BaseScreen extends StatefulWidget {
   State<BaseScreen> createState() => _BaseScreenState();
 }
 
-bool _isCart = false;
-
 Future<void> onBackgroundMessage(RemoteMessage message) async {
   print(message.data);
 }
@@ -34,7 +31,12 @@ class _BaseScreenState extends State<BaseScreen> {
   int currentIndex = 0;
   final pageController = PageController();
 
-  final List<Widget> tabs = [
+  final List<Widget> tabsGeral = [
+    const HomeTab(),
+    const ProfileTab(),
+  ];
+
+  final List<Widget> tabsPub = [
     const HomeTab(),
     const MinisterioTab(),
     const AnunciosTab(),
@@ -51,7 +53,18 @@ class _BaseScreenState extends State<BaseScreen> {
     const ProfileTab(),
   ];
 
-  final List<BottomNavigationBarItem> navigations = [
+  final List<BottomNavigationBarItem> navigationsGeral = [
+    const BottomNavigationBarItem(
+      icon: Icon(Icons.home),
+      label: 'Reuniões',
+    ),
+    const BottomNavigationBarItem(
+      icon: Icon(Icons.person),
+      label: 'Perfil',
+    ),
+  ];
+
+  final List<BottomNavigationBarItem> navigationsPub = [
     const BottomNavigationBarItem(
       icon: Icon(Icons.home),
       label: 'Reuniões',
@@ -154,6 +167,7 @@ class _BaseScreenState extends State<BaseScreen> {
   Widget build(BuildContext context) {
     var firstPub = Provider.of<PublicadorList>(context).firstPub;
     String user = firstPub?.nome ?? '';
+    bool isPub = (firstPub?.nivel ?? 0) == 1;
     bool isCart = (firstPub?.nivel ?? 0) >= 2;
 
     Timer(const Duration(seconds: 2), () {
@@ -167,7 +181,11 @@ class _BaseScreenState extends State<BaseScreen> {
               PageView(
                   physics: const NeverScrollableScrollPhysics(),
                   controller: pageController, //indica qual a tela aberta
-                  children: isCart ? tabsCart : tabs),
+                  children: isCart
+                      ? tabsCart
+                      : isPub
+                          ? tabsPub
+                          : tabsGeral),
               //  if (token != null) SelectableText(token!),
             ]),
             bottomNavigationBar: BottomNavigationBar(
@@ -184,7 +202,11 @@ class _BaseScreenState extends State<BaseScreen> {
                 selectedFontSize: 12,
                 unselectedItemColor: Colors.white.withAlpha(100),
                 unselectedFontSize: 11,
-                items: isCart ? navigationsCart : navigations),
+                items: isCart
+                    ? navigationsCart
+                    : isPub
+                        ? navigationsPub
+                        : navigationsGeral),
           );
   }
 }

@@ -17,8 +17,6 @@ class PublisherCartTab extends StatefulWidget {
   State<PublisherCartTab> createState() => _PublisherCartTabState();
 }
 
-bool isAdmin = false;
-bool isPublisher = false;
 String nomeUsuario = '';
 int tipoTela = 0;
 
@@ -57,12 +55,15 @@ class _PublisherCartTabState extends State<PublisherCartTab> {
 
   @override
   Widget build(BuildContext context) {
+    bool isAdmin = false;
+    bool isPublisher = false;
     List<PublisherCart> cart = Provider.of<PublisherCartList>(context).items_;
     List<Publicador> usuario = Provider.of<PublicadorList>(context).usuario;
 
     if (usuario.isNotEmpty) {
-      isAdmin = (usuario.first.nivel == 4 || usuario.first.nivel >= 6);
-      isPublisher = (usuario.first.nivel == 3 || usuario.first.nivel >= 6);
+      PublicadorList user = Provider.of<PublicadorList>(context);
+      isAdmin = user.levelPub! >= UserLevel.ministerio;
+      isPublisher = user.isPublisher;
       nomeUsuario = usuario.first.nome;
     }
 

@@ -26,7 +26,8 @@ class PublicadorList with ChangeNotifier {
 
   String? get namePub => firstPub?.nome;
   int? get levelPub => firstPub?.nivel ?? 0;
-  bool get isDirigente => firstPub?.nivel == 3;
+  bool get isDirigente => (firstPub?.nivel ?? 0) == 3;
+  bool get isPublisher => (firstPub?.nivel ?? 0) >= 2;
 
   Future<void> loadPublicador() async {
     items2.clear();

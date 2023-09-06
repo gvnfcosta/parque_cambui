@@ -71,7 +71,7 @@ class _TerritoriesTabState extends State<TerritoriesTab> {
         Provider.of<TerritoriesList>(context).items2;
     PublicadorList user = Provider.of<PublicadorList>(context);
     bool isAdmin = user.levelPub! == UserLevel.territories ||
-        user.levelPub! >= UserLevel.reuniaoVidaMinisterio;
+        user.levelPub! >= UserLevel.ministerio;
 
     isDirigente = user.isDirigente;
     isPublicador = !isAdmin && !isDirigente;

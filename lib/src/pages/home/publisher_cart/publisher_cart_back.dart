@@ -8,8 +8,6 @@ import 'package:provider/provider.dart';
 import '../../../../services/utils_services.dart';
 import '../../../models/publicador_list.dart';
 import '../../../models/publicador_model.dart';
-import '../../../models/territories_model.dart';
-import '../../../models/territories_list.dart';
 
 class PublisherCartBack extends StatefulWidget {
   const PublisherCartBack({super.key});
