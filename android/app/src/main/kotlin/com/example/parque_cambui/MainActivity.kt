@@ -1,4 +1,4 @@
-package br.com.dacost.parque_cambui
+package br.com.dacost.parquecambui
 
 import io.flutter.embedding.android.FlutterActivity
 
