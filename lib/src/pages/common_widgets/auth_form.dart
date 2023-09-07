@@ -141,7 +141,7 @@ class _AuthFormState extends State<AuthForm> {
                       return null;
                     },
                   ),
-                  const SizedBox(height: 5),
+                  const SizedBox(height: 10),
                   TextFormField(
                       decoration: InputDecoration(
                         labelText: 'Senha',
