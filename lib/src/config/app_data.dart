@@ -21,10 +21,12 @@ class Constants {
 }
 
 const oradorImage =
-    "https://firebasestorage.googleapis.com/v0/b/pqcambui-41a18.appspot.com/o/images%2FRFSCartoon.jpg?alt=media&token=512a88ed-02c0-454f-9dc0-d9b97ff4db74";
+    "https://firebasestorage.googleapis.com/v0/b/pqcambui-41a18.appspot.com/o/images%2FOrador_Ale.jpg?alt=media&token=80c7bcd1-c8e7-4eed-b365-ad3986c75949";
+// "https://firebasestorage.googleapis.com/v0/b/pqcambui-41a18.appspot.com/o/images%2FRFSCartoon.jpg?alt=media&token=512a88ed-02c0-454f-9dc0-d9b97ff4db74";
 
 const testemunhoImage =
-    "https://firebasestorage.googleapis.com/v0/b/pqcambui-41a18.appspot.com/o/images%2FRvmcCartoon.jpg?alt=media&token=5f017467-e578-47d4-a532-3452f1545009";
+    "https://firebasestorage.googleapis.com/v0/b/pqcambui-41a18.appspot.com/o/images%2FRvmc_Ale.jpg?alt=media&token=eb8fc1fc-20fc-4f28-935e-18291c904793";
+// "https://firebasestorage.googleapis.com/v0/b/pqcambui-41a18.appspot.com/o/images%2FRvmcCartoon.jpg?alt=media&token=5f017467-e578-47d4-a532-3452f1545009";
 
 const publisherCartImage =
     'https://firebasestorage.googleapis.com/v0/b/pqcambui-41a18.appspot.com/o/images%2FJwCart_1.jpg?alt=media&token=da3bcac0-1215-4b8f-9ff2-becf9c7d52d0';

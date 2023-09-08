@@ -26,9 +26,9 @@ class RpubGridWidget extends StatelessWidget {
                   physics: const BouncingScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: quantidadeItemsTela,
-                    mainAxisSpacing: 10,
-                    crossAxisSpacing: 10,
-                    childAspectRatio: 9 / 10,
+                    mainAxisSpacing: 5,
+                    crossAxisSpacing: 5,
+                    childAspectRatio: 10 / 10,
                   ),
                   itemCount: itemQtde,
                   itemBuilder: (ctx, i) {
@@ -63,9 +63,9 @@ class RvmcGridWidget extends StatelessWidget {
                   physics: const BouncingScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: quantidadeItemsTela,
-                    mainAxisSpacing: 10,
-                    crossAxisSpacing: 10,
-                    childAspectRatio: 9 / 10,
+                    mainAxisSpacing: 5,
+                    crossAxisSpacing: 5,
+                    childAspectRatio: 10 / 10,
                   ),
                   itemCount: itemQtde,
                   itemBuilder: (ctx, i) {

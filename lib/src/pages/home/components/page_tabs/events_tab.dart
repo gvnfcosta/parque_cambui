@@ -79,7 +79,7 @@ class _EventsGridWidget extends StatelessWidget {
           Text(
             texto,
             style: TextStyle(
-              fontSize: 22,
+              fontSize: 18,
               fontWeight: FontWeight.w400,
               color: CustomColors.customContrastColor,
             ),
