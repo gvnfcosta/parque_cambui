@@ -31,26 +31,27 @@ class RvmcTile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               //Imagem
-              Padding(
-                padding: const EdgeInsets.all(8),
-                child: ClipRRect(
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(8),
-                    topRight: Radius.circular(8),
-                  ),
-                  child: Image.network(testemunhoImage),
+              Container(
+                margin: const EdgeInsets.only(left: 5, top: 5),
+                child: Row(
+                  children: [
+                    Text(DateFormat("dd").format((reuniaoRvmc.date)),
+                        style:
+                            const TextStyle(fontSize: 18, color: Colors.blue)),
+                    Text(
+                        DateFormat(" MMMM", 'pt_BR').format((reuniaoRvmc.date)),
+                        style:
+                            const TextStyle(fontSize: 12, color: Colors.blue)),
+                  ],
                 ),
               ),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    DateFormat("d/MM/yyyy", 'pt_BR').format((reuniaoRvmc.date)),
-                    style:
-                        const TextStyle(fontSize: 13, color: Color(0xFF12202F)),
-                  ),
-                ],
+              ClipRRect(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(8),
+                  topRight: Radius.circular(8),
+                ),
+                child: Image.network(testemunhoImage),
               ),
             ],
           ),

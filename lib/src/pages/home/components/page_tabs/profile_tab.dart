@@ -245,19 +245,8 @@ class _ProfileTabState extends State<ProfileTab> {
                               borderRadius: BorderRadius.circular(20),
                             ),
                           ),
-                          onPressed:
-                              // authController.isLoading.value
-                              //       ? null
-                              //       :
-                              () {
-                            if (_formKey.currentState!.validate()) {
-                              // authController.changePassword(
-                              //   currentPassword:
-                              //       oldPasswordController.text,
-                              //   newPassword:
-                              //       newPasswordController.text,
-                              // );
-                            }
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {}
                           },
                           child: const Text('ATUALIZAR'),
                         ),

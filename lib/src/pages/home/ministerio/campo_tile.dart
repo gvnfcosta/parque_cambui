@@ -10,8 +10,8 @@ import '../../../models/servico_campo_model.dart';
 
 class CampoTile extends StatefulWidget {
   final ServicoCampo campo;
-  const CampoTile(this.campo, this._isAdmin, {Key? key}) : super(key: key);
   final bool _isAdmin;
+  const CampoTile(this.campo, this._isAdmin, {Key? key}) : super(key: key);
 
   @override
   State<CampoTile> createState() => _CampoTileState();
@@ -46,96 +46,90 @@ class _CampoTileState extends State<CampoTile> {
         ? territoryName = 'R U R A L'
         : territoryName = territory;
 
+    bool domingo =
+        DateFormat('EEEE', 'pt_BR').format(widget.campo.date) == 'domingo';
+
     return Card(
-      color: CustomColors.tileBacgroundColor,
-      elevation: 2,
-      child:
-          // _isLoading          ? const Center(child: CircularProgressIndicator())          :
-          Padding(
-        padding: const EdgeInsets.all(3),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Container(
-              margin: const EdgeInsets.only(top: 8),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+        color: CustomColors.tileBacgroundColor,
+        elevation: 2,
+        child: Stack(children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Row(
                 children: [
-                  DateFormat('EEEE', 'pt_BR').format(widget.campo.date) ==
-                          'domingo'
-                      ? Text(
+                  Padding(
+                    padding: const EdgeInsets.only(left: 5, top: 5),
+                    child: Text(
+                      DateFormat("EEEE", 'pt_BR')
+                              .format(widget.campo.date)[0]
+                              .toUpperCase() +
                           DateFormat("EEEE", 'pt_BR')
-                                  .format(widget.campo.date)[0]
-                                  .toUpperCase() +
-                              DateFormat("EEEE", 'pt_BR')
-                                  .format(widget.campo.date)
-                                  .substring(1)
-                                  .toLowerCase(),
-                          style:
-                              const TextStyle(fontSize: 12, color: Colors.red),
-                          textAlign: TextAlign.center)
-                      : Text(
-                          DateFormat("EEEE", 'pt_BR')
-                                  .format(widget.campo.date)[0]
-                                  .toUpperCase() +
-                              DateFormat("EEEE", 'pt_BR')
-                                  .format(widget.campo.date)
-                                  .substring(1)
-                                  .toLowerCase(),
-                          style:
-                              const TextStyle(fontSize: 11, color: Colors.blue),
-                          textAlign: TextAlign.center),
-                  Text(
-                    DateFormat(", d 'de' MMMM", 'pt_BR')
-                        .format(widget.campo.date),
-                    style: const TextStyle(fontSize: 11),
-                    textAlign: TextAlign.center,
+                              .format(widget.campo.date)
+                              .substring(1)
+                              .toLowerCase(),
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: domingo ? Colors.red : Colors.blue),
+                    ),
                   ),
                 ],
               ),
-            ),
-            Text(
-              widget.campo.dirigenteName.split(' ')[0],
-              style: const TextStyle(fontSize: 12),
-              textAlign: TextAlign.center,
-              maxLines: 1,
-            ),
-            Text(
-              territoryName!,
-              style: const TextStyle(fontSize: 11, color: Colors.orange),
-              textAlign: TextAlign.center,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: widget._isAdmin
-                  ? [
-                      Row(
-                        children: [
-                          //Botão Editar
-                          GestureDetector(
-                              onTap: () {
-                                Navigator.of(context).pushNamed(
-                                  AppRoutes.campoForm,
-                                  arguments: widget.campo,
-                                );
-                              },
-                              child: CustomIcons.editIconMini),
+              Padding(
+                padding: const EdgeInsets.only(left: 15, top: 5),
+                child: Text(
+                    DateFormat("d MMMM", 'pt_BR').format(widget.campo.date),
+                    style: TextStyle(
+                        fontSize: 14,
+                        color: domingo ? Colors.red : Colors.blue)),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 15, top: 5),
+                child: Text(
+                  widget.campo.dirigenteName.split(' ')[0],
+                  style: const TextStyle(fontSize: 16),
+                  maxLines: 1,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 15, top: 5),
+                child: Text(
+                  territoryName!,
+                  style: const TextStyle(fontSize: 12, color: Colors.grey),
+                ),
+              ),
+            ],
+          ),
+          widget._isAdmin
+              ? Positioned(
+                  top: 0,
+                  right: 0,
+                  child:
+                      Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                    Row(
+                      children: [
+                        //Botão Editar
+                        GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).pushNamed(
+                                AppRoutes.campoForm,
+                                arguments: widget.campo,
+                              );
+                            },
+                            child: CustomIcons.editIconMini),
 
-                          //Botão Excluir
-                          IconButton(
-                              icon: CustomIcons.deleteIconMini,
-                              onPressed: () {
-                                _removeDialog(context);
-                              }),
-                        ],
-                      )
-                    ]
-                  : [],
-            ),
-          ],
-        ),
-      ),
-    );
+                        //Botão Excluir
+                        IconButton(
+                            icon: CustomIcons.deleteIconMini,
+                            onPressed: () {
+                              _removeDialog(context);
+                            }),
+                      ],
+                    )
+                  ]),
+                )
+              : const SizedBox.shrink(),
+        ]));
   }
 
   _removeDialog(context) {

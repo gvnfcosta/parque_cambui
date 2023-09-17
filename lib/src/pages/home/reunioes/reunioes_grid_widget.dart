@@ -28,7 +28,7 @@ class RpubGridWidget extends StatelessWidget {
                     crossAxisCount: quantidadeItemsTela,
                     mainAxisSpacing: 5,
                     crossAxisSpacing: 5,
-                    childAspectRatio: 10 / 10,
+                    childAspectRatio: 10 / 11,
                   ),
                   itemCount: itemQtde,
                   itemBuilder: (ctx, i) {
@@ -65,7 +65,7 @@ class RvmcGridWidget extends StatelessWidget {
                     crossAxisCount: quantidadeItemsTela,
                     mainAxisSpacing: 5,
                     crossAxisSpacing: 5,
-                    childAspectRatio: 10 / 10,
+                    childAspectRatio: 10 / 11,
                   ),
                   itemCount: itemQtde,
                   itemBuilder: (ctx, i) {

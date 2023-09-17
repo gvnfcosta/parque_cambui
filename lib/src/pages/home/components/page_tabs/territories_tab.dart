@@ -297,7 +297,7 @@ class _TerritoriesGridWidget extends StatelessWidget {
                   crossAxisCount: quantidadeItemsTela,
                   mainAxisSpacing: 1,
                   crossAxisSpacing: 1,
-                  childAspectRatio: isTile ? 7 / 7 : 5,
+                  childAspectRatio: isTile ? 7 / 8 : 5,
                 ),
                 itemCount: territories.length,
                 itemBuilder: (ctx, index) => ChangeNotifierProvider.value(

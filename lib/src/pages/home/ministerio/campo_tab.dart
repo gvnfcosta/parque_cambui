@@ -33,7 +33,7 @@ class _CampoTabState extends State<CampoTab> {
   Widget build(BuildContext context) {
     final provider = Provider.of<CampoList>(context);
     final double deviceSize = MediaQuery.of(context).size.width;
-    final axisCount = deviceSize ~/ 200;
+    final axisCount = deviceSize ~/ 150;
 
     final List<ServicoCampo> campo = provider.saidasAtuais;
     int qtdeItems = campo.length;
@@ -78,7 +78,7 @@ class _CampoTabState extends State<CampoTab> {
                             crossAxisCount: axisCount,
                             mainAxisSpacing: 1,
                             crossAxisSpacing: 0,
-                            childAspectRatio: _isAdmin ? 9 / 6 : 8 / 3,
+                            childAspectRatio: 9 / 5,
                           ),
                           itemCount: qtdeItems,
                           itemBuilder: (_, index) {
@@ -107,12 +107,12 @@ class _CampoTabState extends State<CampoTab> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 diaSemana(' Terças-feira', '9:00', 'NEY', Colors.grey.shade200),
-                diaSemana(
-                    'Quartas-feira', '9:00', 'CELSO', Colors.blueGrey.shade100),
+                diaSemana('Quartas-feira', '9:00', 'IDIVALMIR',
+                    Colors.blueGrey.shade100),
                 diaSemana(
                     'Quintas-feira', '9:00', 'VALDIR', Colors.grey.shade200),
-                diaSemana(
-                    'Quintas-feira', '15:30', 'ALEX', Colors.blueGrey.shade100),
+                diaSemana('Quintas-feira', '14:00', 'REVISITAS',
+                    Colors.blueGrey.shade100),
                 separator,
                 diaSemana('Sábados', '9:15', 'SALÃO', Colors.grey.shade200),
                 diaSemana(

@@ -49,7 +49,7 @@ class _EventsTabState extends State<EventsTab> {
             _EventsGridWidget(
                 quantidadeItemsTela,
                 'https://publicdomainvectors.org/photos/1534903384.png',
-                'Visita do casal viajante\nIrmãos Almir e Rose\n '),
+                'Visita do casal viajante\nIrmãos Almir e Rose\nd31 de outubro a 5 de novembro'),
             _EventsGridWidget(
                 quantidadeItemsTela,
                 'https://assetsnffrgf-a.akamaihd.net/assets/m/202023101/univ/art/202023101_univ_lsr_lg.jpg',

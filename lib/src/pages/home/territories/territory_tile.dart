@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:parquecambui/src/pages/home/territories/mapa_screen.dart';
-import '../../../constants/app_customs.dart';
 import 'package:provider/provider.dart';
 import '../../../models/territories_model.dart';
 import 'territory_screen.dart';
@@ -41,135 +40,128 @@ class TerritoryTile extends StatelessWidget {
         },
         child: Card(
           elevation: 2,
-          //shadowColor: Colors.grey.shade300,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(1.0),
-            child: isTile
-                ? Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      //Imagem
-                      Expanded(
-                        child: Hero(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          child: isTile
+              ? Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(left: 5, top: 5),
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            territories.numero,
+                            style: const TextStyle(
+                              fontSize: 15,
+                              color: Colors.blue,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(left: 5),
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            territories.nome,
+                            style: const TextStyle(
+                              fontSize: 11,
+                              color: Colors.black,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        Hero(
                           tag: territories.url,
                           child: Image.network(territories.url,
                               fit: BoxFit.contain),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(3, 0, 3, 8),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              territories.numero,
-                              style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.grey[600],
-                              ),
-                            ),
-                            Text(
-                              territories.nome,
-                              style: TextStyle(
-                                fontSize: 10,
-                                color: CustomColors.customSwatchColor,
-                              ),
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  )
-                : Padding(
-                    padding: const EdgeInsets.fromLTRB(3, 0, 3, 3),
-                    child: Row(
-                      children: [
-                        Container(
-                          width: 80,
-                          margin: const EdgeInsets.only(left: 10),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                      ],
+                    ),
+                  ],
+                )
+              : Padding(
+                  padding: const EdgeInsets.only(left: 10, top: 5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text(
                                 territories.numero,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                  color: CustomColors.customSwatchColor,
+                                  color: Colors.blue,
                                 ),
                               ),
+                              const SizedBox(width: 10),
                               Text(
                                 territories.nome,
-                                style: TextStyle(
-                                  fontSize: 10,
-                                  color: CustomColors.customSwatchColor,
+                                style: const TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.black,
                                 ),
-                                textAlign: TextAlign.left,
                               ),
                             ],
                           ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(left: 20),
-                          child: territories.publicador != 'sem_designação'
-                              ? Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      territories.publicador,
-                                      style: const TextStyle(
-                                        fontSize: 12,
-                                        color: Colors.red,
+                          Container(
+                            height: 40,
+                            child: territories.publicador != 'sem_designação'
+                                ? Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        territories.publicador,
+                                        style: const TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.red,
+                                        ),
                                       ),
-                                      textAlign: TextAlign.center,
-                                    ),
-                                    Text(
-                                      DateFormat("'Início em ' d 'de' MMMM",
-                                              'pt_BR')
-                                          .format(territories.dataInicio),
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        color: CustomColors.customSwatchColor,
+                                      Text(
+                                        DateFormat("'Início em ' d 'de' MMMM",
+                                                'pt_BR')
+                                            .format(territories.dataInicio),
+                                        style: const TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.orange,
+                                        ),
                                       ),
-                                      textAlign: TextAlign.center,
-                                    ),
-                                  ],
-                                )
-                              : Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      DateFormat("'Concluído em ' d 'de' MMMM",
-                                              'pt_BR')
-                                          .format(territories.dataConclusao),
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        color: CustomColors.customSwatchColor,
+                                    ],
+                                  )
+                                : Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        DateFormat(
+                                                "'Concluído em ' d 'de' MMMM",
+                                                'pt_BR')
+                                            .format(territories.dataConclusao),
+                                        style: const TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.blue,
+                                        ),
                                       ),
-                                      textAlign: TextAlign.center,
-                                    ),
-                                  ],
-                                ),
-                        ),
-                      ],
-                    ),
+                                    ],
+                                  ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-          ),
+                ),
         ),
       ),
 
-      //Botão
       !isTile
           ? Positioned(
-              top: 10,
+              top: 5,
               right: 10,
               child: GestureDetector(
                 onTap: () {
