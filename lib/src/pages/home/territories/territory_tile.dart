@@ -49,7 +49,7 @@ class TerritoryTile extends StatelessWidget {
                     Column(
                       children: [
                         Container(
-                          margin: const EdgeInsets.only(left: 5, top: 5),
+                          margin: const EdgeInsets.only(left: 10, top: 10),
                           alignment: Alignment.centerLeft,
                           child: Text(
                             territories.numero,
@@ -60,7 +60,7 @@ class TerritoryTile extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          margin: const EdgeInsets.only(left: 5),
+                          margin: const EdgeInsets.only(left: 10, top: 3),
                           alignment: Alignment.centerLeft,
                           child: Text(
                             territories.nome,
@@ -81,7 +81,7 @@ class TerritoryTile extends StatelessWidget {
                   ],
                 )
               : Padding(
-                  padding: const EdgeInsets.only(left: 10, top: 5),
+                  padding: const EdgeInsets.only(left: 15, top: 5),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,7 +95,7 @@ class TerritoryTile extends StatelessWidget {
                               Text(
                                 territories.numero,
                                 style: const TextStyle(
-                                  fontSize: 14,
+                                  fontSize: 15,
                                   color: Colors.blue,
                                 ),
                               ),
@@ -110,7 +110,8 @@ class TerritoryTile extends StatelessWidget {
                             ],
                           ),
                           Container(
-                            height: 40,
+                            margin: const EdgeInsets.only(left: 10),
+                            height: 35,
                             child: territories.publicador != 'sem_designação'
                                 ? Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -162,7 +163,7 @@ class TerritoryTile extends StatelessWidget {
       !isTile
           ? Positioned(
               top: 5,
-              right: 10,
+              right: 15,
               child: GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(

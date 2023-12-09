@@ -43,7 +43,7 @@ class _CampoTileState extends State<CampoTile> {
     }
 
     DateFormat("EEEE", 'pt_BR').format(widget.campo.date) == 'domingo'
-        ? territoryName = 'R U R A L'
+        ? territoryName = 'RURAL'
         : territoryName = territory;
 
     bool domingo =
@@ -59,7 +59,7 @@ class _CampoTileState extends State<CampoTile> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 5, top: 5),
+                    padding: const EdgeInsets.only(left: 10, top: 5),
                     child: Text(
                       DateFormat("EEEE", 'pt_BR')
                               .format(widget.campo.date)[0]
@@ -76,7 +76,7 @@ class _CampoTileState extends State<CampoTile> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 15, top: 5),
+                padding: const EdgeInsets.only(left: 20, top: 5),
                 child: Text(
                     DateFormat("d MMMM", 'pt_BR').format(widget.campo.date),
                     style: TextStyle(
@@ -84,7 +84,7 @@ class _CampoTileState extends State<CampoTile> {
                         color: domingo ? Colors.red : Colors.blue)),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 15, top: 5),
+                padding: const EdgeInsets.only(left: 20, top: 5),
                 child: Text(
                   widget.campo.dirigenteName.split(' ')[0],
                   style: const TextStyle(fontSize: 16),
@@ -92,38 +92,45 @@ class _CampoTileState extends State<CampoTile> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 15, top: 5),
+                padding: const EdgeInsets.only(left: 20, top: 5),
                 child: Text(
                   territoryName!,
-                  style: const TextStyle(fontSize: 12, color: Colors.grey),
+                  style: const TextStyle(fontSize: 12, color: Colors.indigo),
                 ),
               ),
             ],
           ),
           widget._isAdmin
               ? Positioned(
-                  top: 0,
-                  right: 0,
+                  top: 10,
+                  right: 5,
                   child:
                       Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-                    Row(
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         //Botão Editar
-                        GestureDetector(
-                            onTap: () {
-                              Navigator.of(context).pushNamed(
-                                AppRoutes.campoForm,
-                                arguments: widget.campo,
-                              );
-                            },
-                            child: CustomIcons.editIconMini),
+                        SizedBox(
+                          width: 30,
+                          child: GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).pushNamed(
+                                  AppRoutes.campoForm,
+                                  arguments: widget.campo,
+                                );
+                              },
+                              child: CustomIcons.editIconMini),
+                        ),
 
                         //Botão Excluir
-                        IconButton(
-                            icon: CustomIcons.deleteIconMini,
-                            onPressed: () {
-                              _removeDialog(context);
-                            }),
+                        SizedBox(
+                          width: 30,
+                          child: IconButton(
+                              icon: CustomIcons.deleteIconMini,
+                              onPressed: () {
+                                _removeDialog(context);
+                              }),
+                        ),
                       ],
                     )
                   ]),

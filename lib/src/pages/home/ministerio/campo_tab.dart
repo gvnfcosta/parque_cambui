@@ -78,7 +78,7 @@ class _CampoTabState extends State<CampoTab> {
                             crossAxisCount: axisCount,
                             mainAxisSpacing: 1,
                             crossAxisSpacing: 0,
-                            childAspectRatio: 9 / 5,
+                            childAspectRatio: 8 / 5,
                           ),
                           itemCount: qtdeItems,
                           itemBuilder: (_, index) {

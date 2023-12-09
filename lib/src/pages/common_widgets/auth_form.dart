@@ -148,15 +148,12 @@ class _AuthFormState extends State<AuthForm> {
                         labelStyle:
                             const TextStyle(fontWeight: FontWeight.bold),
                         prefixIcon: const Icon(
-                          Icons.password_sharp,
+                          Icons.lock,
                           color: Colors.indigo,
                         ),
                         suffixIcon: IconButton(
-                            onPressed: (() {
-                              setState(() {
-                                _isObscure = !_isObscure;
-                              });
-                            }),
+                            onPressed: (() =>
+                                setState(() => _isObscure = !_isObscure)),
                             icon: Icon(
                               _isObscure
                                   ? Icons.visibility

@@ -48,8 +48,8 @@ class _RvmcScreenState extends State<RvmcScreen> {
             const Text(
               'Reunião Vida e Ministério Cristão',
               style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w600,
+                  fontSize: 12,
+                  fontWeight: FontWeight.w300,
                   color: Colors.white),
             ),
             const SizedBox(height: 3),
@@ -62,7 +62,7 @@ class _RvmcScreenState extends State<RvmcScreen> {
                       .substring(1)
                       .toLowerCase(),
               style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 18,
                   fontWeight: FontWeight.w300,
                   color: Colors.grey[300]),
             ),
