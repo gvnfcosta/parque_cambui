@@ -38,88 +38,79 @@ class _SignInScreenState extends State<SignInScreen> {
     final deviceSize = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: CustomColors.customSwatchColor,
-      body: Center(
+      body: SafeArea(
         child: SingleChildScrollView(
-          child: SizedBox(
-            width: 400,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                deviceSize.height > 600
-                    ? Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 12.0),
-                        child: SizedBox(
-                            height: 150,
-                            child: Image.asset('assets/icone.png')),
-                      )
-                    : const SizedBox.shrink(),
-                //Nome do App
-                const Text.rich(
-                    TextSpan(style: TextStyle(fontSize: 40), children: [
-                  TextSpan(
-                      text: 'Congregação',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 36,
-                          fontWeight: FontWeight.w200,
-                          letterSpacing: 1.2)),
-                ])),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: RichText(
-                      textAlign: TextAlign.center,
-                      text: const TextSpan(
-                          style: TextStyle(fontSize: 44),
-                          children: [
-                            TextSpan(
-                                text: 'Parque Cambuí',
-                                style: TextStyle(
-                                    color: Colors.cyanAccent,
-                                    fontWeight: FontWeight.w400)),
-                          ])),
-                ),
-
-                const SizedBox(height: 10),
-
-                Column(children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 25, vertical: 10),
-                    child: const AuthForm(),
-                  ),
-                ]),
-
-                Padding(
-                  padding: const EdgeInsets.only(top: 12.0),
-                  child: SizedBox(
-                      height: 45,
-                      child: DefaultTextStyle(
-                          style: const TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.w100,
-                              color: Colors.amber),
-                          child: AnimatedTextKit(
-                              pause: Duration.zero,
-                              repeatForever: true,
-                              animatedTexts: textoAnimated))),
-                ),
-
-                deviceSize.height > 500
-                    ? const Padding(
-                        padding: EdgeInsets.only(left: 30, top: 10, right: 30),
-                        child: Column(children: [
-                          Text(
-                              '"Mas eu entrarei na tua casa por causa do teu grande amor leal." - Salmo 5:7\n',
-                              textAlign: TextAlign.center,
+          child: Column(
+            children: [
+              SizedBox(
+                height: deviceSize.height / 10,
+              ),
+              //Nome do App
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: SizedBox(
+                    height: deviceSize.height / 4,
+                    child: Image.asset('assets/icone.png')),
+              ),
+              const Text.rich(
+                  TextSpan(style: TextStyle(fontSize: 40), children: [
+                TextSpan(
+                    text: 'Congregação',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 30,
+                        fontWeight: FontWeight.w200,
+                        letterSpacing: 1.2)),
+              ])),
+              Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: RichText(
+                    textAlign: TextAlign.center,
+                    text: const TextSpan(
+                        style: TextStyle(fontSize: 40),
+                        children: [
+                          TextSpan(
+                              text: 'Parque Cambuí',
                               style: TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w200)),
-                        ]),
-                      )
-                    : const SizedBox(),
-              ],
-            ),
+                                  color: Colors.cyanAccent,
+                                  fontWeight: FontWeight.w400)),
+                        ])),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 12.0),
+                child: SizedBox(
+                    height: 45,
+                    child: DefaultTextStyle(
+                        style: const TextStyle(
+                            fontSize: 26,
+                            fontWeight: FontWeight.w100,
+                            color: Colors.amber),
+                        child: AnimatedTextKit(
+                            pause: Duration.zero,
+                            repeatForever: true,
+                            animatedTexts: textoAnimated))),
+              ),
+
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                child: const AuthForm(),
+              ),
+              deviceSize.height > 500
+                  ? const Padding(
+                      padding: EdgeInsets.only(left: 30, top: 10, right: 30),
+                      child: Column(mainAxisSize: MainAxisSize.min, children: [
+                        Text(
+                            '"Mas eu entrarei na tua casa por causa do teu grande amor leal." - Salmo 5:7\n',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w200)),
+                      ]),
+                    )
+                  : const SizedBox(),
+            ],
           ),
         ),
       ),

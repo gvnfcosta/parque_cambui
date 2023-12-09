@@ -47,7 +47,13 @@ class _ProfileTabState extends State<ProfileTab> {
               physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.fromLTRB(16, 32, 16, 16),
               children: [
+                Padding(
+                  padding: const EdgeInsets.all(42.0),
+                  child: SizedBox(
+                      height: 200, child: Image.asset('assets/icone.png')),
+                ),
                 //Email
+
                 CustomTextField(
                     readOnly: true,
                     initialValue: userName,
@@ -67,13 +73,13 @@ class _ProfileTabState extends State<ProfileTab> {
                   readOnly: true,
                   initialValue: privilegio,
                   icon: Icons.person,
-                  label: 'Nível',
+                  label: 'Privilégio',
                 ),
                 const SizedBox(height: 5),
                 CustomTextField(
                   readOnly: true,
-                  initialValue: '2.3.1',
-                  icon: CupertinoIcons.bars,
+                  initialValue: '2.3.2',
+                  icon: CupertinoIcons.number_circle_fill,
                   label: 'Versão',
                 ),
 

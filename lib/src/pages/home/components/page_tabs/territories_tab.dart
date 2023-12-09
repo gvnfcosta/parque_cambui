@@ -73,6 +73,8 @@ class _TerritoriesTabState extends State<TerritoriesTab> {
     bool isAdmin = user.levelPub! == UserLevel.territories ||
         user.levelPub! >= UserLevel.ministerio;
 
+    if (user.namePub == null) return const SizedBox.shrink();
+
     isDirigente = user.isDirigente;
     isPublicador = !isAdmin && !isDirigente;
     String nomeUsuario = user.namePub!;

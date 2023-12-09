@@ -52,7 +52,6 @@ class _RvmcScreenState extends State<RvmcScreen> {
                   fontWeight: FontWeight.w300,
                   color: Colors.white),
             ),
-            const SizedBox(height: 3),
             Text(
               DateFormat("EEEE, d 'de' MMMM", 'pt_BR')
                       .format(reuniaoSelecionada.date)[0]
