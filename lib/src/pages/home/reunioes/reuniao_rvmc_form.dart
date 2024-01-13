@@ -48,6 +48,11 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
   DateTime? setDate;
 
   final List _temasPartes1 = [
+    'Interesse pelas pessoas - O que Jesus fez (Vídeo)',
+    'Interesse pelas pessoas - Imite Jesus',
+    'Iniciando conversas',
+    'Fazendo discípulos',
+    'Cultivando o interesse',
     'Vídeo da primeira conversa',
     'Vídeo da revisita',
     'Primeira conversa',
@@ -61,6 +66,11 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
   ];
 
   final List _temasPartes2 = [
+    'Interesse pelas pessoas - O que Jesus fez (Vídeo)',
+    'Interesse pelas pessoas - Imite Jesus',
+    'Iniciando conversas',
+    'Fazendo discípulos',
+    'Cultivando o interesse',
     'Primeira conversa',
     'Segunda conversa',
     'Revisita',
@@ -72,6 +82,12 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
   ];
 
   final List _temasPartes3 = [
+    'Interesse pelas pessoas - O que Jesus fez (Vídeo)',
+    'Interesse pelas pessoas - Imite Jesus',
+    'Iniciando conversas',
+    'Fazendo discípulos',
+    'Cultivando o interesse',
+    'Explicando suas crenças',
     'Revisita',
     'Discurso',
     'Estudo Bíblico',
@@ -608,12 +624,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                         color: Theme.of(context)
                                                             .hintColor)),
                                                 items: publicadores
-                                                    .where((publicador) =>
-                                                        publicador
-                                                            .conversaRevisita ||
-                                                        publicador.privilegio ==
-                                                            'Ancião')
-                                                    .toList()
                                                     .map((item) => DropdownMenuItem<
                                                             String>(
                                                         value: item.nome,
@@ -665,10 +675,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                         color: Theme.of(context)
                                                             .hintColor)),
                                                 items: publicadores
-                                                    .where((publicador) =>
-                                                        publicador
-                                                            .conversaRevisita)
-                                                    .toList()
                                                     .map((item) => DropdownMenuItem<
                                                             String>(
                                                         value: item.nome,
@@ -773,10 +779,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                         color: Theme.of(context)
                                                             .hintColor)),
                                                 items: publicadores
-                                                    .where((publicador) =>
-                                                        publicador
-                                                            .conversaRevisita)
-                                                    .toList()
                                                     .map((item) => DropdownMenuItem<
                                                             String>(
                                                         value: item.nome,
@@ -1617,12 +1619,12 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
 
   _showDatePicker() {
     DateTime dateToday = DateTime.now();
-    while (dateToday.weekday != 2) {
+    while (dateToday.weekday != 3) {
       dateToday = dateToday.add(const Duration(days: 1));
     }
     showDatePicker(
       context: context,
-      selectableDayPredicate: (DateTime val) => val.weekday != 2 ? false : true,
+      selectableDayPredicate: (DateTime val) => val.weekday != 3 ? false : true,
       initialDate: dateToday,
       firstDate: DateTime.now(),
       lastDate: DateTime.now().add(const Duration(days: 60)),

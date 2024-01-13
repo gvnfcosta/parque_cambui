@@ -20,6 +20,7 @@ class ReuniaoPublicaFormState extends State<ReuniaoPublicaForm> {
   final _presidenteFocus = FocusNode();
   final _discursoTemaFocus = FocusNode();
   final _oradorFocus = FocusNode();
+  final _foneOradorFocus = FocusNode();
   final _congregacaoFocus = FocusNode();
   final _leitorASentinelaFocus = FocusNode();
   final _indicador1Focus = FocusNode();
@@ -68,6 +69,7 @@ class ReuniaoPublicaFormState extends State<ReuniaoPublicaForm> {
         _formData['presidente'] = reuniaoPublica.presidente;
         _formData['discursoTema'] = reuniaoPublica.discursoTema;
         _formData['orador'] = reuniaoPublica.orador;
+        _formData['foneOrador'] = reuniaoPublica.foneOrador;
         _formData['congregacao'] = reuniaoPublica.congregacao;
         _formData['leitorASentinela'] = reuniaoPublica.leitorASentinela;
         _formData['indicador1'] = reuniaoPublica.indicador1;
@@ -88,6 +90,7 @@ class ReuniaoPublicaFormState extends State<ReuniaoPublicaForm> {
     _presidenteFocus.dispose();
     _discursoTemaFocus.dispose();
     _oradorFocus.dispose();
+    _foneOradorFocus.dispose();
     _congregacaoFocus.dispose();
     _leitorASentinelaFocus.dispose();
     _indicador1Focus.dispose();
@@ -104,6 +107,7 @@ class ReuniaoPublicaFormState extends State<ReuniaoPublicaForm> {
     setState(() => _isLoading = true);
 
     _formData['date'] = (_formData['date'] ?? setDate)!;
+    _formData['foneOrador'] = (_formData['foneOrador'] ?? '');
     if (!isValid) return;
 
     if (_formData['presidente'] == null ||
@@ -245,7 +249,7 @@ class ReuniaoPublicaFormState extends State<ReuniaoPublicaForm> {
                                     ],
                                   ),
                                   SizedBox(
-                                    height: 100,
+                                    height: 80,
                                     child: TextFormField(
                                         initialValue: _formData['discursoTema']
                                             ?.toString(),
@@ -291,7 +295,7 @@ class ReuniaoPublicaFormState extends State<ReuniaoPublicaForm> {
                                         focusNode: _oradorFocus,
                                         onFieldSubmitted: (_) {
                                           FocusScope.of(context)
-                                              .requestFocus(_congregacaoFocus);
+                                              .requestFocus(_foneOradorFocus);
                                         },
                                         onSaved: (orador) =>
                                             _formData['orador'] = orador ?? '',
@@ -301,6 +305,36 @@ class ReuniaoPublicaFormState extends State<ReuniaoPublicaForm> {
                                           if (orador.trim().isEmpty) {
                                             return 'Orador é obrigatório';
                                           }
+
+                                          return null;
+                                        }),
+                                  ),
+                                  SizedBox(
+                                    height: 55,
+                                    child: TextFormField(
+                                        initialValue:
+                                            _formData['foneOrador']?.toString(),
+                                        decoration: const InputDecoration(
+                                            labelText: 'Telefone Orador'),
+                                        style: TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w600,
+                                            color: Theme.of(context).hintColor),
+                                        textInputAction: TextInputAction.next,
+                                        focusNode: _foneOradorFocus,
+                                        onFieldSubmitted: (_) {
+                                          FocusScope.of(context)
+                                              .requestFocus(_congregacaoFocus);
+                                        },
+                                        onSaved: (foneOrador) =>
+                                            _formData['foneOrador'] =
+                                                foneOrador ?? '',
+                                        validator: (value) {
+                                          final foneOrador = value ?? '';
+
+                                          // if (orador.trim().isEmpty) {
+                                          //   return 'Orador é obrigatório';
+                                          // }
 
                                           return null;
                                         }),

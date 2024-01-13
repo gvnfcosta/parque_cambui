@@ -112,10 +112,18 @@ class _ReuniaoPublicaScreenState extends State<ReuniaoPublicaScreen> {
                   label: 'Tema',
                   initialValue: reuniaoSelecionada.discursoTema,
                   readOnly: readOnly),
-              CustomTextField(
-                  label: 'Orador',
-                  initialValue: reuniaoSelecionada.orador,
-                  readOnly: readOnly),
+              GestureDetector(
+                onDoubleTap: isAdmin
+                    ? (() => _phoneDialog(
+                          reuniaoSelecionada.orador,
+                          reuniaoSelecionada.foneOrador,
+                        ))
+                    : null,
+                child: CustomTextField(
+                    label: 'Orador',
+                    initialValue: reuniaoSelecionada.orador,
+                    readOnly: readOnly),
+              ),
               CustomTextField(
                   icon: Icons.home,
                   label: 'Congregação',
@@ -151,6 +159,17 @@ class _ReuniaoPublicaScreenState extends State<ReuniaoPublicaScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  _phoneDialog(String orador, String phone) {
+    showDialog(
+      context: context,
+      builder: (ctx) =>
+          AlertDialog(title: Text(orador), content: Text(phone), actions: [
+        TextButton(
+            child: const Text('OK'), onPressed: () => Navigator.of(ctx).pop()),
+      ]),
     );
   }
 

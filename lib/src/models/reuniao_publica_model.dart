@@ -6,6 +6,7 @@ class ReuniaoPublica with ChangeNotifier {
   final String presidente;
   final String discursoTema;
   final String orador;
+  final String foneOrador;
   final String congregacao;
   final String leitorASentinela;
   final String indicador1;
@@ -21,6 +22,7 @@ class ReuniaoPublica with ChangeNotifier {
     required this.presidente,
     required this.discursoTema,
     required this.orador,
+    required this.foneOrador,
     required this.congregacao,
     required this.leitorASentinela,
     required this.indicador1,
