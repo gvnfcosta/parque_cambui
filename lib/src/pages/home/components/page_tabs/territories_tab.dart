@@ -73,6 +73,8 @@ class _TerritoriesTabState extends State<TerritoriesTab> {
     bool isAdmin = user.levelPub! == UserLevel.territories ||
         user.levelPub! >= UserLevel.ministerio;
 
+    if (user.namePub == null) return const SizedBox.shrink();
+
     isDirigente = user.isDirigente;
     isPublicador = !isAdmin && !isDirigente;
     String nomeUsuario = user.namePub!;
@@ -297,7 +299,7 @@ class _TerritoriesGridWidget extends StatelessWidget {
                   crossAxisCount: quantidadeItemsTela,
                   mainAxisSpacing: 1,
                   crossAxisSpacing: 1,
-                  childAspectRatio: isTile ? 7 / 8 : 5,
+                  childAspectRatio: isTile ? 7 / 7 : 5,
                 ),
                 itemCount: territories.length,
                 itemBuilder: (ctx, index) => ChangeNotifierProvider.value(

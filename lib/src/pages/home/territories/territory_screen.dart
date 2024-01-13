@@ -103,7 +103,7 @@ class TerritoryScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(left: 8),
                             child: SizedBox(
-                              width: 140,
+                              width: 145,
                               child: TextFormField(
                                 // style: const TextStyle(fontSize: 12),
                                 initialValue: tipoTela == 0

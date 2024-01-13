@@ -48,11 +48,10 @@ class _RvmcScreenState extends State<RvmcScreen> {
             const Text(
               'Reunião Vida e Ministério Cristão',
               style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w600,
+                  fontSize: 12,
+                  fontWeight: FontWeight.w300,
                   color: Colors.white),
             ),
-            const SizedBox(height: 3),
             Text(
               DateFormat("EEEE, d 'de' MMMM", 'pt_BR')
                       .format(reuniaoSelecionada.date)[0]
@@ -62,7 +61,7 @@ class _RvmcScreenState extends State<RvmcScreen> {
                       .substring(1)
                       .toLowerCase(),
               style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 18,
                   fontWeight: FontWeight.w300,
                   color: Colors.grey[300]),
             ),

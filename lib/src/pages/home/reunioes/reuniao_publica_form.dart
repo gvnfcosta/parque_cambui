@@ -146,7 +146,7 @@ class ReuniaoPublicaFormState extends State<ReuniaoPublicaForm> {
   @override
   Widget build(BuildContext context) {
     //final provider = Provider.of<PublicadorList>(context);
-    final PublicadorList publicador = Provider.of(context);
+    final publicador = Provider.of<PublicadorList>(context);
 
     List<Publicador> publicadores = publicador.items.toList()
       ..sort(((a, b) => a.nome.compareTo(b.nome)));

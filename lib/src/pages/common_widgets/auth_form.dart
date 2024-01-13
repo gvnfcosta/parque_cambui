@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
+import 'package:parquecambui/src/data/store.dart';
 import 'package:parquecambui/src/pages/home/components/controllers/admin_controller.dart';
 import 'package:provider/provider.dart';
 import '../../exceptions/auth_exception.dart';
@@ -32,14 +32,11 @@ class _AuthFormState extends State<AuthForm> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
 
-  late Box box;
-
   @override
   void initState() {
     super.initState();
     _isObscure = true;
-
-    if (!_isWeb) createOpenBox();
+    getdata();
   }
 
   void _switchAuthMode() {
@@ -148,15 +145,12 @@ class _AuthFormState extends State<AuthForm> {
                         labelStyle:
                             const TextStyle(fontWeight: FontWeight.bold),
                         prefixIcon: const Icon(
-                          Icons.password_sharp,
+                          Icons.lock,
                           color: Colors.indigo,
                         ),
                         suffixIcon: IconButton(
-                            onPressed: (() {
-                              setState(() {
-                                _isObscure = !_isObscure;
-                              });
-                            }),
+                            onPressed: (() =>
+                                setState(() => _isObscure = !_isObscure)),
                             icon: Icon(
                               _isObscure
                                   ? Icons.visibility
@@ -233,8 +227,12 @@ class _AuthFormState extends State<AuthForm> {
                       ],
                     ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      const Text(
+                        'Ver. 2.3.2',
+                        style: TextStyle(fontSize: 12),
+                      ),
                       TextButton(
                         onPressed: _switchAuthMode,
                         child: Text(
@@ -253,27 +251,24 @@ class _AuthFormState extends State<AuthForm> {
     );
   }
 
-  void createOpenBox() async {
-    box = await Hive.openBox('cambui_user_data');
-    getdata();
-  }
-
   void getdata() async {
-    if (box.get('email') != null) {
-      emailController.text = box.get('email');
-      setState(() {});
-    }
-    if (box.get('pass') != null) {
-      passwordController.text = box.get('pass');
+    final loginData = await Store.getMap('loginData');
+
+    if (loginData.isNotEmpty) {
+      emailController.text = await loginData['email'];
+      passwordController.text = await loginData['pass'];
       setState(() {});
     }
   }
 
-  void login() {
-    if (emailController.value.text != box.get('email') ||
-        passwordController.value.text != box.get('password')) {
-      box.put('email', emailController.value.text);
-      box.put('pass', passwordController.value.text);
+  void login() async {
+    final loginData = await Store.getMap('loginData');
+    if (emailController.value.text != await loginData['email'] ||
+        passwordController.value.text != await loginData['pass']) {
+      Store.saveMap('loginData', {
+        'email': emailController.value.text,
+        'pass': passwordController.value.text
+      });
     }
   }
 }

@@ -142,6 +142,7 @@ class PqCambuiApp extends StatelessWidget {
                 brightness: isDark ? Brightness.dark : Brightness.light,
                 primarySwatch: Colors.blueGrey,
                 scaffoldBackgroundColor: Colors.grey[300],
+                visualDensity: VisualDensity.adaptivePlatformDensity,
               ),
               localizationsDelegates: const [
                 GlobalMaterialLocalizations.delegate,
@@ -170,6 +171,7 @@ class PqCambuiApp extends StatelessWidget {
                 AppRoutes.anunciosLocaisForm: (ctx) =>
                     const AnunciosLocaisForm(),
               },
+
               debugShowCheckedModeBanner: false,
               // builder: (context, child) {
               //   final test = context.findAncestorWidgetOfExactType<MyApp>();

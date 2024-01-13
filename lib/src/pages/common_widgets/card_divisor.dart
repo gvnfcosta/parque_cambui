@@ -16,8 +16,7 @@ class CardDivisor extends StatelessWidget {
         child: Card(
           elevation: 0,
           color: backColor,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(1)),
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
             child: Center(

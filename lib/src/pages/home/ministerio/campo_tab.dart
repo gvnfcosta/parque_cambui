@@ -78,7 +78,7 @@ class _CampoTabState extends State<CampoTab> {
                             crossAxisCount: axisCount,
                             mainAxisSpacing: 1,
                             crossAxisSpacing: 0,
-                            childAspectRatio: 9 / 5,
+                            childAspectRatio: 8 / 5,
                           ),
                           itemCount: qtdeItems,
                           itemBuilder: (_, index) {
@@ -114,13 +114,13 @@ class _CampoTabState extends State<CampoTab> {
                 diaSemana('Quintas-feira', '14:00', 'REVISITAS',
                     Colors.blueGrey.shade100),
                 separator,
-                diaSemana('Sábados', '9:15', 'SALÃO', Colors.grey.shade200),
+                diaSemana('Sábados', '9:00', 'SALÃO', Colors.grey.shade200),
                 diaSemana(
-                    'Domingos', '9:15', 'GRUPOS', Colors.blueGrey.shade100),
+                    'Domingos', '9:00', 'GRUPOS', Colors.blueGrey.shade100),
                 separator,
                 diaSemana('2º Domingo', '8:30', 'RURAL', Colors.grey.shade200),
                 diaSemana(
-                    'Feriados', '9:15', 'SALÃO', Colors.blueGrey.shade100),
+                    'Feriados', '9:00', 'SALÃO', Colors.blueGrey.shade100),
               ],
             ),
           ),

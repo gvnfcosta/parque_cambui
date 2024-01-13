@@ -49,8 +49,8 @@ class _ReuniaoPublicaScreenState extends State<ReuniaoPublicaScreen> {
               'Reunião Pública',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w600,
+                fontSize: 12,
+                fontWeight: FontWeight.w300,
                 color: Colors.white,
               ),
             ),
@@ -64,7 +64,7 @@ class _ReuniaoPublicaScreenState extends State<ReuniaoPublicaScreen> {
                       .substring(1)
                       .toLowerCase(),
               style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 18,
                   fontWeight: FontWeight.w300,
                   color: Colors.grey[300]),
             ),
