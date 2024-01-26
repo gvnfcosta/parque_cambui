@@ -559,44 +559,41 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                     fontWeight: FontWeight.w600,
                                                     fontSize: _tamanhoFonte)),
                                           ),
-                                          DropdownButtonHideUnderline(
-                                            child: SizedBox(
-                                              width: larguraCampo,
-                                              child: DropdownButton2(
+                                          Container(
+                                            margin: const EdgeInsets.only(
+                                                bottom: 10),
+                                            // height: 70,
+                                            width: larguraCampo,
+                                            child: TextFormField(
+                                                initialValue: _formData[
+                                                        'primeiraMinisterioTema']
+                                                    ?.toString(),
+                                                style: TextStyle(
+                                                    fontSize: _tamanhoFonte),
+                                                //maxLines: 2,
+                                                textInputAction:
+                                                    TextInputAction.next,
                                                 focusNode:
                                                     _primeiraMinisterioTemaFocus,
-                                                dropdownElevation: 12,
-                                                hint: Text('Selecione',
-                                                    style: TextStyle(
-                                                        fontSize: _tamanhoFonte,
-                                                        color: Theme.of(context)
-                                                            .hintColor)),
-                                                items: _temasPartes1
-                                                    .toList()
-                                                    .map((item) => DropdownMenuItem<
-                                                            String>(
-                                                        value: item,
-                                                        child: Text(item,
-                                                            style: TextStyle(
-                                                                fontSize:
-                                                                    _tamanhoFonte))))
-                                                    .toList(),
-                                                value: _formData[
-                                                    'primeiraMinisterioTema'],
-                                                isDense: true,
-                                                onChanged: (value) {
-                                                  setState(() {
-                                                    _formData[
-                                                            'primeiraMinisterioTema'] =
-                                                        value as String;
-                                                  });
+                                                onFieldSubmitted: (_) {
+                                                  FocusScope.of(context)
+                                                      .requestFocus(
+                                                          _primeiraMinisterioDesignado1Focus);
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
-                                                autofocus: true,
-                                              ),
-                                            ),
+                                                onSaved: (value) => _formData[
+                                                        'primeiraMinisterioTema'] =
+                                                    value ?? '',
+                                                validator: (value) {
+                                                  final validator = value ?? '';
+
+                                                  if (validator
+                                                      .trim()
+                                                      .isEmpty) {
+                                                    return 'Tema é obrigatório';
+                                                  }
+
+                                                  return null;
+                                                }),
                                           ),
                                         ],
                                       ),
@@ -714,44 +711,44 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                     fontWeight: FontWeight.w600,
                                                     fontSize: _tamanhoFonte)),
                                           ),
-                                          DropdownButtonHideUnderline(
-                                            child: SizedBox(
-                                              width: larguraCampo,
-                                              child: DropdownButton2(
+                                          Container(
+                                            margin: const EdgeInsets.only(
+                                                bottom: 10),
+                                            // height: 70,
+                                            width: larguraCampo,
+                                            child: TextFormField(
+                                                initialValue: _formData[
+                                                        'segundaMinisterioTema']
+                                                    ?.toString(),
+                                                style: TextStyle(
+                                                    fontSize: _tamanhoFonte),
+                                                //maxLines: 2,
+                                                textInputAction:
+                                                    TextInputAction.next,
                                                 focusNode:
                                                     _segundaMinisterioTemaFocus,
-                                                dropdownElevation: 12,
-                                                hint: Text('Selecione',
-                                                    style: TextStyle(
-                                                        fontSize: _tamanhoFonte,
-                                                        color: Theme.of(context)
-                                                            .hintColor)),
-                                                items: _temasPartes2
-                                                    .toList()
-                                                    .map((item) => DropdownMenuItem<
-                                                            String>(
-                                                        value: item,
-                                                        child: Text(item,
-                                                            style: TextStyle(
-                                                                fontSize:
-                                                                    _tamanhoFonte))))
-                                                    .toList(),
-                                                value: _formData[
-                                                    'segundaMinisterioTema'],
-                                                isDense: true,
-                                                onChanged: (value) {
-                                                  setState(() {
-                                                    _formData[
-                                                            'segundaMinisterioTema'] =
-                                                        value as String;
-                                                  });
+                                                onFieldSubmitted: (_) {
+                                                  FocusScope.of(context)
+                                                      .requestFocus(
+                                                          _segundaMinisterioDesignado1Focus);
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
-                                                autofocus: true,
-                                              ),
-                                            ),
+                                                onSaved: (value) => _formData[
+                                                        'segundaMinisterioTema'] =
+                                                    value ?? '',
+                                                validator: (value) {
+                                                  final validator = value ?? '';
+                                                  _formData[
+                                                          'segundaMinisterioTema'] =
+                                                      value!;
+
+                                                  if (validator
+                                                      .trim()
+                                                      .isEmpty) {
+                                                    return 'Tema é obrigatório';
+                                                  }
+
+                                                  return null;
+                                                }),
                                           ),
                                         ],
                                       ),
@@ -873,43 +870,29 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                     fontWeight: FontWeight.w600,
                                                     fontSize: _tamanhoFonte)),
                                           ),
-                                          DropdownButtonHideUnderline(
-                                            child: SizedBox(
-                                              width: larguraCampo,
-                                              child: DropdownButton2(
-                                                focusNode:
-                                                    _terceiraMinisterioTemaFocus,
-                                                dropdownElevation: 12,
-                                                hint: Text('Selecione',
-                                                    style: TextStyle(
-                                                        fontSize: _tamanhoFonte,
-                                                        color: Theme.of(context)
-                                                            .hintColor)),
-                                                items: _temasPartes3
-                                                    .toList()
-                                                    .map((item) => DropdownMenuItem<
-                                                            String>(
-                                                        value: item,
-                                                        child: Text(item,
-                                                            style: TextStyle(
-                                                                fontSize:
-                                                                    _tamanhoFonte))))
-                                                    .toList(),
-                                                value: _formData[
-                                                    'terceiraMinisterioTema'],
-                                                isDense: true,
-                                                onChanged: (value) {
-                                                  setState(() {
-                                                    _formData[
-                                                            'terceiraMinisterioTema'] =
-                                                        value as String;
-                                                  });
-                                                },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
-                                                autofocus: true,
-                                              ),
+                                          Container(
+                                            margin: const EdgeInsets.only(
+                                                bottom: 10),
+                                            // height: 70,
+                                            width: larguraCampo,
+                                            child: TextFormField(
+                                              initialValue: _formData[
+                                                      'terceiraMinisterioTema']
+                                                  ?.toString(),
+                                              style: TextStyle(
+                                                  fontSize: _tamanhoFonte),
+                                              //maxLines: 2,
+                                              textInputAction:
+                                                  TextInputAction.next,
+                                              focusNode:
+                                                  _terceiraMinisterioTemaFocus,
+                                              onFieldSubmitted: (_) {
+                                                FocusScope.of(context).requestFocus(
+                                                    _terceiraMinisterioDesignado1Focus);
+                                              },
+                                              onSaved: (value) => _formData[
+                                                      'terceiraMinisterioTema'] =
+                                                  value ?? '',
                                             ),
                                           ),
                                         ],

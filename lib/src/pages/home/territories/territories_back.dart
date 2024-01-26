@@ -451,7 +451,7 @@ class _TerritoriesBackPageState extends State<TerritoriesBackPage> {
     showDatePicker(
       context: context,
       initialDate: DateTime.now(),
-      firstDate: DateTime.now(),
+      firstDate: DateTime.now().subtract(const Duration(days: 90)),
       lastDate: DateTime.now().add(const Duration(days: 90)),
     ).then((pickedDate) {
       if (pickedDate == null) {

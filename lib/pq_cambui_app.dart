@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:parquecambui/src/pages/home/users/user_form.dart';
 import 'package:provider/provider.dart';
@@ -139,11 +140,16 @@ class PqCambuiApp extends StatelessWidget {
             return MaterialApp(
               title: 'Parque Cambuí',
               theme: ThemeData(
-                brightness: isDark ? Brightness.dark : Brightness.light,
-                primarySwatch: Colors.blueGrey,
-                scaffoldBackgroundColor: Colors.grey[300],
-                visualDensity: VisualDensity.adaptivePlatformDensity,
-              ),
+                  appBarTheme: AppBarTheme(
+                    titleTextStyle: TextStyle(color: Colors.white),
+                  ),
+                  colorScheme:
+                      ColorScheme.fromSwatch(primarySwatch: Colors.indigo)
+                          .copyWith(
+                              secondary: Colors.deepOrange,
+                              background: Colors.white),
+                  fontFamily: 'Lato'),
+
               localizationsDelegates: const [
                 GlobalMaterialLocalizations.delegate,
                 GlobalCupertinoLocalizations.delegate,

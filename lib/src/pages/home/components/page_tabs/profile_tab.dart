@@ -40,6 +40,7 @@ class _ProfileTabState extends State<ProfileTab> {
         // actions: const [ThemeCustomWidget()],
         title: const Text('Perfil do Usuário'),
         backgroundColor: Colors.blueGrey.shade800,
+        titleTextStyle: TextStyle(color: Colors.white),
       ),
       body: userName!.isEmpty
           ? semRegistro(context)

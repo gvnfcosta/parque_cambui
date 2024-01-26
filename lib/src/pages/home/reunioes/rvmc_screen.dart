@@ -124,7 +124,9 @@ class _RvmcScreenState extends State<RvmcScreen> {
                       : Icons.person,
                   label: reuniaoSelecionada.primeiraMinisterioTema,
                   initialValue: reuniaoSelecionada.primeiraMinisterioTema
-                          .contains('Vídeo')
+                              .contains('Vídeo') ||
+                          reuniaoSelecionada.primeiraMinisterioDesignado2
+                              .contains('sem_designação')
                       ? reuniaoSelecionada.primeiraMinisterioDesignado1
                       : '${reuniaoSelecionada.primeiraMinisterioDesignado1}  e  ${reuniaoSelecionada.primeiraMinisterioDesignado2}',
                   readOnly: readOnly),
@@ -134,9 +136,12 @@ class _RvmcScreenState extends State<RvmcScreen> {
                       ? Icons.people
                       : Icons.person,
                   label: reuniaoSelecionada.segundaMinisterioTema,
-                  initialValue: reuniaoSelecionada.segundaMinisterioTema != ''
+                  initialValue: reuniaoSelecionada.segundaMinisterioTema == ''
                       ? '${reuniaoSelecionada.segundaMinisterioDesignado1}  e  ${reuniaoSelecionada.segundaMinisterioDesignado2}'
-                      : reuniaoSelecionada.segundaMinisterioDesignado1,
+                      : reuniaoSelecionada.segundaMinisterioDesignado2
+                              .contains('sem_designação')
+                          ? reuniaoSelecionada.segundaMinisterioDesignado1
+                          : null,
                   readOnly: readOnly),
               CustomTextField(
                   icon: reuniaoSelecionada.terceiraMinisterioTema != 'Discurso'

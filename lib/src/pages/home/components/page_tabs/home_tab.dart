@@ -65,13 +65,14 @@ class _HomeTabState extends State<HomeTab> {
           return Scaffold(
             appBar: AppBar(
               titleSpacing: 2,
-              backgroundColor: CustomColors.mainAppBarBackgroundColor,
+              backgroundColor: Colors.blueGrey.shade800,
               elevation: 1,
               title: TabBar(
                 tabs: tabItems,
+                labelColor: Colors.white,
+                unselectedLabelColor: Colors.grey,
                 indicatorColor: Colors.grey,
-                labelStyle:
-                    const TextStyle(fontSize: CustomFonts.appBarFontSize),
+                dividerColor: Colors.blueGrey.shade800,
               ),
               actions: [
                 SizedBox(
