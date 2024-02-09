@@ -29,8 +29,6 @@ class AnunciosTab extends StatelessWidget {
                   Tab(text: 'Limpeza'),
                   Tab(text: 'Anúncios Locais'),
                 ],
-                labelColor: Colors.white,
-                unselectedLabelColor: Colors.grey,
                 indicatorColor: Colors.grey,
               ),
             ),

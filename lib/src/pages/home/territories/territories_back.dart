@@ -29,6 +29,8 @@ class _TerritoriesBackPageState extends State<TerritoriesBackPage> {
   final _imageUrlController = TextEditingController();
 
   DateTime setDate = DateTime.now();
+  DateTime _dataInicio = DateTime.now();
+  DateTime _dataConclusao = DateTime.now();
 
   final formKey = GlobalKey<FormState>();
   final _formData = <String, Object>{};
@@ -66,9 +68,9 @@ class _TerritoriesBackPageState extends State<TerritoriesBackPage> {
     if (_formData.isEmpty) {
       final arg = ModalRoute.of(context)?.settings.arguments;
 
-      _formData['dataInicio'] = (_formData['dataInicio'] ?? DateTime.now());
-      _formData['dataConclusao'] =
-          (_formData['dataConclusao'] ?? DateTime.now());
+      // _formData['dataInicio'] = (_formData['dataInicio'] ?? DateTime.now());
+      // _formData['dataConclusao'] =
+      //     (_formData['dataConclusao'] ?? DateTime.now());
       _formData['publicador'] = _formData['publicador'] ?? '';
       _formData['observacoes'] = _formData['observacoes'] ?? '';
       _formData['anotacoes'] = _formData['anotacoes'] ?? '';
@@ -80,8 +82,8 @@ class _TerritoriesBackPageState extends State<TerritoriesBackPage> {
         _formData['nome'] = territories.nome;
         _formData['url'] = territories.url;
         _formData['publicador'] = 'sem_designação';
-        _formData['dataInicio'] = territories.dataInicio;
-        _formData['dataConclusao'] = setDate;
+        _dataInicio = territories.dataInicio;
+        _formData['dataConclusao'] = territories.dataConclusao;
         _formData['observacoes'] = territories.observacoes;
         _formData['anotacoes'] = territories.anotacoes;
         _imageUrlController.text = territories.url;
@@ -111,7 +113,8 @@ class _TerritoriesBackPageState extends State<TerritoriesBackPage> {
   }
 
   Future<void> _submitForm() async {
-    _formData['dataConclusao'] = setDate;
+    _formData['dataInicio'] = _dataInicio;
+    // _formData['dataConclusao'] = setDate;
     final isValid = formKey.currentState?.validate() ?? false;
 
     formKey.currentState?.save();
@@ -139,6 +142,30 @@ class _TerritoriesBackPageState extends State<TerritoriesBackPage> {
       Navigator.of(context).pop();
       Navigator.of(context).pop();
     }
+  }
+
+  _concluido() {
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+          title: const Text('Devolução de Território'),
+          content: const Text('Território Concluído?'),
+          actions: [
+            TextButton(
+                child: const Text('NÃO'),
+                onPressed: () {
+                  // _formData['dataConclusao'] = _dataConclusao;
+
+                  Navigator.of(ctx).pop();
+                }),
+            TextButton(
+                child: const Text('SIM'),
+                onPressed: () {
+                  _formData['dataConclusao'] = setDate;
+                  Navigator.of(ctx).pop();
+                })
+          ]),
+    );
   }
 
   @override
@@ -207,7 +234,7 @@ class _TerritoriesBackPageState extends State<TerritoriesBackPage> {
                       Row(
                         children: [
                           const SizedBox(
-                            child: Text('Data de Início: ',
+                            child: Text('Data de Conclusão: ',
                                 style: TextStyle(fontWeight: FontWeight.w600)),
                           ),
                           Expanded(
@@ -352,7 +379,32 @@ class _TerritoriesBackPageState extends State<TerritoriesBackPage> {
                                     backgroundColor: MaterialStatePropertyAll(
                                         Colors.red.shade800)),
                                 onPressed: () {
-                                  _submitForm();
+                                  showDialog(
+                                    context: context,
+                                    builder: (ctx) => AlertDialog(
+                                        title: const Text(
+                                            'Devolução de Território'),
+                                        content:
+                                            const Text('Território Concluído?'),
+                                        actions: [
+                                          TextButton(
+                                              child: const Text('NÃO'),
+                                              onPressed: () {
+                                                // concluded = false;
+
+                                                _submitForm();
+                                                Navigator.of(ctx).pop();
+                                              }),
+                                          TextButton(
+                                              child: const Text('SIM'),
+                                              onPressed: () {
+                                                _formData['dataConclusao'] =
+                                                    setDate;
+                                                _submitForm();
+                                                Navigator.of(ctx).pop();
+                                              })
+                                        ]),
+                                  );
                                 },
                                 child: const Row(
                                   mainAxisAlignment: MainAxisAlignment.center,

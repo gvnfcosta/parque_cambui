@@ -69,10 +69,9 @@ class _HomeTabState extends State<HomeTab> {
               elevation: 1,
               title: TabBar(
                 tabs: tabItems,
-                labelColor: Colors.white,
-                unselectedLabelColor: Colors.grey,
+                // labelColor: Colors.white,
+                // unselectedLabelColor: Colors.grey,
                 indicatorColor: Colors.grey,
-                dividerColor: Colors.blueGrey.shade800,
               ),
               actions: [
                 SizedBox(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:parquecambui/src/models/eventos/eventos_list.dart';
 import 'package:parquecambui/src/pages/home/users/user_form.dart';
 import 'package:provider/provider.dart';
 
@@ -133,6 +134,15 @@ class PqCambuiApp extends StatelessWidget {
             );
           },
         ),
+        ChangeNotifierProxyProvider<Auth, EventoList>(
+          create: (_) => EventoList('', []),
+          update: (ctx, auth, previous) {
+            return EventoList(
+              auth.token ?? '',
+              previous?.items ?? [],
+            );
+          },
+        ),
       ],
       child: ValueListenableBuilder(
           valueListenable: AppController.instance.themeSwitch,
@@ -140,15 +150,12 @@ class PqCambuiApp extends StatelessWidget {
             return MaterialApp(
               title: 'Parque Cambuí',
               theme: ThemeData(
-                  appBarTheme: AppBarTheme(
-                    titleTextStyle: TextStyle(color: Colors.white),
-                  ),
-                  colorScheme:
-                      ColorScheme.fromSwatch(primarySwatch: Colors.indigo)
-                          .copyWith(
-                              secondary: Colors.deepOrange,
-                              background: Colors.white),
-                  fontFamily: 'Lato'),
+                useMaterial3: false,
+                brightness: isDark ? Brightness.dark : Brightness.light,
+                primarySwatch: Colors.blueGrey,
+                scaffoldBackgroundColor: Colors.grey[300],
+                fontFamily: 'Lato',
+              ),
 
               localizationsDelegates: const [
                 GlobalMaterialLocalizations.delegate,

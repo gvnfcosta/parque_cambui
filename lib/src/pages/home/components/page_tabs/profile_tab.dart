@@ -79,7 +79,7 @@ class _ProfileTabState extends State<ProfileTab> {
                 const SizedBox(height: 5),
                 CustomTextField(
                   readOnly: true,
-                  initialValue: '2.3.2',
+                  initialValue: '2.3.3',
                   icon: CupertinoIcons.number_circle_fill,
                   label: 'Versão',
                 ),

@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
-
 import 'package:parquecambui/src/models/publicador_list.dart';
 import 'package:parquecambui/src/pages/home/components/app_drawer.dart';
 import 'package:provider/provider.dart';
 
 class CheckUser extends StatefulWidget {
-  const CheckUser({super.key});
+  const CheckUser({Key? key}) : super(key: key);
 
   @override
   State<CheckUser> createState() => _CheckUserState();
 }
-
-bool _isLoading = true;
 
 class _CheckUserState extends State<CheckUser> {
   @override
@@ -23,7 +20,9 @@ class _CheckUserState extends State<CheckUser> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.blueGrey.shade800,
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -44,18 +43,7 @@ class _CheckUserState extends State<CheckUser> {
                         color: Colors.grey.shade500,
                       ),
                     ),
-                    const LinearProgressIndicator(
-                      color: Colors.amberAccent,
-                    ),
-
-                    // Text(
-                    //   'Você pode entrar em contato\ncom o Administrador',
-                    //   textAlign: TextAlign.center,
-                    //   style: TextStyle(
-                    //     fontSize: 20,
-                    //     color: Colors.grey.shade400,
-                    //   ),
-                    // ),
+                    const LinearProgressIndicator(color: Colors.amberAccent),
                   ],
                 ),
               ),

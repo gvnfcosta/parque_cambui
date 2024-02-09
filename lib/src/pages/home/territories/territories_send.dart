@@ -63,8 +63,8 @@ class _TerritorieSendPageState extends State<TerritorieSendPage> {
       final arg = ModalRoute.of(context)?.settings.arguments;
 
       _formData['dataInicio'] = DateTime.now();
-      _formData['dataConclusao'] =
-          (_formData['dataConclusao'] ?? DateTime.now());
+      // _formData['dataConclusao'] =
+      //     (_formData['dataConclusao'] ?? DateTime.now());
       _formData['publicador'] = _formData['publicador'] ?? '';
       _formData['observacoes'] = _formData['observacoes'] ?? '';
       _formData['anotacoes'] = _formData['anotacoes'] ?? '';

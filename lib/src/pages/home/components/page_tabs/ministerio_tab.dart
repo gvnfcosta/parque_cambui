@@ -35,10 +35,7 @@ class MinisterioTab extends StatelessWidget {
               backgroundColor: Colors.blueGrey.shade800,
               title: TabBar(
                 tabs: _tabs,
-                labelColor: Colors.white,
-                unselectedLabelColor: Colors.grey,
                 indicatorColor: Colors.grey,
-                dividerColor: Colors.blueGrey.shade800,
               ),
             ),
             body: const TabBarView(

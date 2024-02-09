@@ -220,7 +220,8 @@ class _AuthFormState extends State<AuthForm> {
                               _authMode == AuthMode.login
                                   ? 'ENTRAR'
                                   : 'REGISTRAR',
-                              style: const TextStyle(fontSize: 18),
+                              style: const TextStyle(
+                                  fontSize: 18, color: Colors.white),
                             ),
                           ),
                         ),

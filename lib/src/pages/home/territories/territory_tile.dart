@@ -73,8 +73,8 @@ class TerritoryTile extends StatelessWidget {
                         ),
                         Hero(
                           tag: territories.url,
-                          child: Image.network(territories.url,
-                              fit: BoxFit.contain),
+                          child:
+                              Image.network(territories.url, fit: BoxFit.cover),
                         ),
                       ],
                     ),

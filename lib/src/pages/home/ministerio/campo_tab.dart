@@ -106,11 +106,11 @@ class _CampoTabState extends State<CampoTab> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                diaSemana(' Terças-feira', '9:00', 'NEY', Colors.grey.shade200),
-                diaSemana('Quartas-feira', '9:00', 'IDIVALMIR',
+                diaSemana(' Terças-feira', '8:45', 'NEY', Colors.grey.shade200),
+                diaSemana('Quartas-feira', '8:45', 'IDIVALMIR',
                     Colors.blueGrey.shade100),
                 diaSemana(
-                    'Quintas-feira', '9:00', 'VALDIR', Colors.grey.shade200),
+                    'Quintas-feira', '8:45', 'VALDIR', Colors.grey.shade200),
                 diaSemana('Quintas-feira', '14:00', 'REVISITAS',
                     Colors.blueGrey.shade100),
                 separator,

@@ -24,11 +24,11 @@ class RvmcTile extends StatelessWidget {
           );
         },
         child: Card(
-          color: Colors.grey[200],
+          color: Colors.white.withAlpha(215),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
           elevation: 5,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            // crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               //Imagem
               Container(

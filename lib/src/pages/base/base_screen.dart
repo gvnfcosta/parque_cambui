@@ -170,10 +170,6 @@ class _BaseScreenState extends State<BaseScreen> {
     bool isPub = (firstPub?.nivel ?? 0) == 1;
     bool isCart = (firstPub?.nivel ?? 0) >= 2;
 
-    Timer(const Duration(seconds: 2), () {
-      const Text('Aguarde');
-    });
-
     return user == ''
         ? const CheckUser()
         : Scaffold(
