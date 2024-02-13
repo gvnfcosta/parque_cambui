@@ -136,7 +136,7 @@ class _RvmcScreenState extends State<RvmcScreen> {
                       ? Icons.people
                       : Icons.person,
                   label: reuniaoSelecionada.segundaMinisterioTema,
-                  initialValue: reuniaoSelecionada.segundaMinisterioTema == ''
+                  initialValue: reuniaoSelecionada.segundaMinisterioTema != ''
                       ? '${reuniaoSelecionada.segundaMinisterioDesignado1}  e  ${reuniaoSelecionada.segundaMinisterioDesignado2}'
                       : reuniaoSelecionada.segundaMinisterioDesignado2
                               .contains('sem_designação')
