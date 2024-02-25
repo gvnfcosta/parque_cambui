@@ -151,16 +151,16 @@ class _BaseScreenState extends State<BaseScreen> {
       }
     });
 
-    FirebaseMessaging.onBackgroundMessage(onBackgroundMessage);
+    //   FirebaseMessaging.onBackgroundMessage(onBackgroundMessage);
 
-    FirebaseMessaging.onMessageOpenedApp.listen((message) {
-      print('Toque em background: ${message.notification?.title}');
-    });
+    //   FirebaseMessaging.onMessageOpenedApp.listen((message) {
+    //     print('Toque em background: ${message.notification?.title}');
+    //   });
 
-    final RemoteMessage? message = await messaging.getInitialMessage();
-    if (message != null) {
-      print('Toque em terminated: ${message.notification?.title}');
-    }
+    //   final RemoteMessage? message = await messaging.getInitialMessage();
+    //   if (message != null) {
+    //     print('Toque em terminated: ${message.notification?.title}');
+    //   }
   }
 
   @override

@@ -62,7 +62,7 @@ class _TerritorieSendPageState extends State<TerritorieSendPage> {
     if (_formData.isEmpty) {
       final arg = ModalRoute.of(context)?.settings.arguments;
 
-      _formData['dataInicio'] = DateTime.now();
+      // _formData['dataInicio'] = DateTime.now();
       // _formData['dataConclusao'] =
       //     (_formData['dataConclusao'] ?? DateTime.now());
       _formData['publicador'] = _formData['publicador'] ?? '';
@@ -78,6 +78,8 @@ class _TerritorieSendPageState extends State<TerritorieSendPage> {
         _formData['publicador'] = territories.publicador;
         _formData['observacoes'] = territories.observacoes;
         _formData['anotacoes'] = territories.anotacoes;
+        _formData['dataInicio'] = territories.dataInicio;
+        _formData['dataConclusao'] = territories.dataConclusao;
         _imageUrlController.text = territories.url;
         setDate = DateTime.now();
       }
@@ -117,21 +119,23 @@ class _TerritorieSendPageState extends State<TerritorieSendPage> {
       await Provider.of<TerritoriesList>(context, listen: false)
           .saveData(_formData);
     } catch (error) {
-      await showDialog<void>(
-          context: context,
-          builder: (ctx) => AlertDialog(
-                  title: const Text('ERRO!'),
-                  content: const Text('Erro na gravação dos dados'),
-                  actions: [
-                    TextButton(
-                        child: const Text('Ok'),
-                        onPressed: () => Navigator.of(context).pop()),
-                  ]));
+      if (mounted) {
+        await showDialog<void>(
+            context: context,
+            builder: (ctx) => AlertDialog(
+                    title: const Text('ERRO!'),
+                    content: const Text('Erro na gravação dos dados'),
+                    actions: [
+                      TextButton(
+                          child: const Text('Ok'),
+                          onPressed: () => Navigator.of(context).pop()),
+                    ]));
+      }
     } finally {
       setState(() => isLoading = false);
 
-      Navigator.of(context).pop();
-      Navigator.of(context).pop();
+      if (mounted) Navigator.of(context).pop();
+      if (mounted) Navigator.of(context).pop();
     }
   }
 
