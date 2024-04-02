@@ -7,6 +7,7 @@ class Eventos {
   DateTime congressoData;
   DateTime celebracaoData;
   DateTime visitaData;
+  String conventionImage;
   Eventos({
     required this.id,
     required this.assembleiaDataViajante,
@@ -14,6 +15,7 @@ class Eventos {
     required this.congressoData,
     required this.celebracaoData,
     required this.visitaData,
+    required this.conventionImage,
   });
 
   Map<String, dynamic> toMap() {
@@ -37,6 +39,7 @@ class Eventos {
       congressoData: DateTime.parse(map['congressoData']),
       celebracaoData: DateTime.parse(map['celebracaoData']),
       visitaData: DateTime.parse(map['visitaData']),
+      conventionImage: map['conventionImage'],
     );
   }
 
@@ -52,6 +55,7 @@ class Eventos {
     DateTime? congressoData,
     DateTime? celebracaoData,
     DateTime? visitaData,
+    String? conventionImage,
   }) {
     return Eventos(
       id: id ?? this.id,
@@ -62,6 +66,7 @@ class Eventos {
       congressoData: congressoData ?? this.congressoData,
       celebracaoData: celebracaoData ?? this.celebracaoData,
       visitaData: visitaData ?? this.visitaData,
+      conventionImage: conventionImage ?? this.conventionImage,
     );
   }
 }
