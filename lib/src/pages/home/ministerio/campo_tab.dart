@@ -16,6 +16,7 @@ class CampoTab extends StatefulWidget {
 class _CampoTabState extends State<CampoTab> {
   bool _isLoading = true;
   bool _isAdmin = false;
+  List<Widget> horarios = [];
 
   @override
   void initState() {
@@ -36,6 +37,20 @@ class _CampoTabState extends State<CampoTab> {
     final axisCount = deviceSize ~/ 150;
 
     final List<ServicoCampo> campo = provider.saidasAtuais;
+    horarios = [
+      diaSemana('Segundas-feira', '19:30', 'CARTAS', Colors.grey.shade200),
+      diaSemana(' Terças-feira', '9:00', 'CELSO', Colors.grey.shade200),
+      diaSemana('Quartas-feira', '9:00', 'IDIVALMIR', Colors.blueGrey.shade100),
+      diaSemana('Quintas-feira', '9:00', 'ARTURO', Colors.grey.shade200),
+      diaSemana(
+          'Quintas-feira', '14:00', 'REVISITAS', Colors.blueGrey.shade100),
+      separator,
+      diaSemana('Sábados', '9:00', 'SALÃO', Colors.grey.shade200),
+      diaSemana('Domingos', '9:00', 'GRUPOS', Colors.blueGrey.shade100),
+      separator,
+      diaSemana('2º Domingo', '8:00', 'RURAL', Colors.grey.shade200),
+      diaSemana('Feriados', '9:00', 'SALÃO', Colors.blueGrey.shade100),
+    ];
     int qtdeItems = campo.length;
 
     List<Publicador> usuario = Provider.of<PublicadorList>(context).usuario;
@@ -78,7 +93,7 @@ class _CampoTabState extends State<CampoTab> {
                             crossAxisCount: axisCount,
                             mainAxisSpacing: 1,
                             crossAxisSpacing: 0,
-                            childAspectRatio: 8 / 5,
+                            childAspectRatio: 10 / 6,
                           ),
                           itemCount: qtdeItems,
                           itemBuilder: (_, index) {
@@ -101,27 +116,12 @@ class _CampoTabState extends State<CampoTab> {
             style: TextStyle(color: Colors.black54),
           ),
           content: Container(
-            height: 290,
+            height: 350,
+            width: 250,
             alignment: Alignment.center,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                diaSemana(' Terças-feira', '8:45', 'NEY', Colors.grey.shade200),
-                diaSemana('Quartas-feira', '8:45', 'IDIVALMIR',
-                    Colors.blueGrey.shade100),
-                diaSemana(
-                    'Quintas-feira', '8:45', 'VALDIR', Colors.grey.shade200),
-                diaSemana('Quintas-feira', '14:00', 'REVISITAS',
-                    Colors.blueGrey.shade100),
-                separator,
-                diaSemana('Sábados', '9:00', 'SALÃO', Colors.grey.shade200),
-                diaSemana(
-                    'Domingos', '9:00', 'GRUPOS', Colors.blueGrey.shade100),
-                separator,
-                diaSemana('2º Domingo', '8:30', 'RURAL', Colors.grey.shade200),
-                diaSemana(
-                    'Feriados', '9:00', 'SALÃO', Colors.blueGrey.shade100),
-              ],
+              children: horarios,
             ),
           ),
           actions: [

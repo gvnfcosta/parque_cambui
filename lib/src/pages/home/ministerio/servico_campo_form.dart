@@ -165,7 +165,6 @@ class ServicoCampoFormState extends State<ServicoCampoForm> {
                                           width: 250,
                                           child: DropdownButton2(
                                             focusNode: _dirigenteNameFocus,
-                                            dropdownElevation: 12,
                                             hint: Text('Selecione',
                                                 style: TextStyle(
                                                     fontSize: 14,
@@ -198,9 +197,6 @@ class ServicoCampoFormState extends State<ServicoCampoForm> {
                                                         value);
                                               });
                                             },
-                                            buttonHeight: 30,
-                                            buttonWidth: 10,
-                                            itemHeight: 30,
                                             autofocus: true,
                                           ),
                                         ),

@@ -206,7 +206,6 @@ class ReuniaoPublicaFormState extends State<ReuniaoPublicaForm> {
                                           width: 280,
                                           child: DropdownButton2(
                                             focusNode: _presidenteFocus,
-                                            dropdownElevation: 12,
                                             hint: Text('Selecione',
                                                 style: TextStyle(
                                                     fontSize: 14,
@@ -239,9 +238,6 @@ class ReuniaoPublicaFormState extends State<ReuniaoPublicaForm> {
                                                         value);
                                               });
                                             },
-                                            buttonHeight: 30,
-                                            buttonWidth: 10,
-                                            itemHeight: 30,
                                             autofocus: true,
                                           ),
                                         ),
@@ -391,7 +387,6 @@ class ReuniaoPublicaFormState extends State<ReuniaoPublicaForm> {
                                               child: DropdownButton2(
                                                 focusNode:
                                                     _leitorASentinelaFocus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: 14,
@@ -426,9 +421,6 @@ class ReuniaoPublicaFormState extends State<ReuniaoPublicaForm> {
                                                     },
                                                   );
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
                                                 autofocus: true,
                                               ),
                                             ),
@@ -444,7 +436,6 @@ class ReuniaoPublicaFormState extends State<ReuniaoPublicaForm> {
                                               width: 350,
                                               child: DropdownButton2(
                                                 focusNode: _indicador1Focus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: 13,
@@ -477,9 +468,6 @@ class ReuniaoPublicaFormState extends State<ReuniaoPublicaForm> {
                                                     },
                                                   );
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
                                                 autofocus: true,
                                               ),
                                             ),
@@ -490,7 +478,6 @@ class ReuniaoPublicaFormState extends State<ReuniaoPublicaForm> {
                                               width: 350,
                                               child: DropdownButton2(
                                                 focusNode: _indicador2Focus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: 13,
@@ -518,9 +505,6 @@ class ReuniaoPublicaFormState extends State<ReuniaoPublicaForm> {
                                                     },
                                                   );
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
                                                 autofocus: true,
                                               ),
                                             ),
@@ -536,7 +520,6 @@ class ReuniaoPublicaFormState extends State<ReuniaoPublicaForm> {
                                               width: 350,
                                               child: DropdownButton2(
                                                 focusNode: _volante1Focus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: 13,
@@ -564,9 +547,6 @@ class ReuniaoPublicaFormState extends State<ReuniaoPublicaForm> {
                                                     },
                                                   );
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
                                                 autofocus: true,
                                               ),
                                             ),
@@ -576,7 +556,6 @@ class ReuniaoPublicaFormState extends State<ReuniaoPublicaForm> {
                                               width: 350,
                                               child: DropdownButton2(
                                                 focusNode: _volante2Focus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: 13,
@@ -604,9 +583,6 @@ class ReuniaoPublicaFormState extends State<ReuniaoPublicaForm> {
                                                     },
                                                   );
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
                                                 autofocus: true,
                                               ),
                                             ),
@@ -621,7 +597,6 @@ class ReuniaoPublicaFormState extends State<ReuniaoPublicaForm> {
                                               width: 350,
                                               child: DropdownButton2(
                                                 focusNode: _midiasFocus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: 13,
@@ -649,9 +624,6 @@ class ReuniaoPublicaFormState extends State<ReuniaoPublicaForm> {
                                                     },
                                                   );
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
                                                 autofocus: true,
                                               ),
                                             ),

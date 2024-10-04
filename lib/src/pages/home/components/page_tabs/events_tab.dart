@@ -76,7 +76,7 @@ class _EventsTabState extends State<EventsTab> {
                   .format(evento!.assembleiaDataViajante);
       dataVisita = evento!.visitaData.isBefore(DateTime.now())
           ? 'Sem Data'
-          : '${DateFormat("dd", 'pt_BR').format(evento!.visitaData)} a ${DateFormat("dd 'de' MMMM 'de' yyy", 'pt_BR').format(evento!.visitaData.add(const Duration(days: 5)))}';
+          : '${DateFormat("d", 'pt_BR').format(evento!.visitaData)} a ${DateFormat("d 'de' MMMM 'de' yyy", 'pt_BR').format(evento!.visitaData.add(const Duration(days: 5)))}';
       dataCongresso = evento!.congressoData.isBefore(DateTime.now())
           ? 'Sem Data'
           : '${DateFormat("d", 'pt_BR').format(evento!.congressoData)}, ${DateFormat("d", 'pt_BR').format(evento!.congressoData.add(const Duration(days: 1)))} e ${DateFormat("dd 'de' MMMM 'de' yyy", 'pt_BR').format(evento!.congressoData.add(const Duration(days: 2)))}';
@@ -106,16 +106,16 @@ class _EventsTabState extends State<EventsTab> {
             : TabBarView(
                 children: [
                   _EventsGridWidget(evento!.conventionImage,
-                      'Congresso Regional\n$dataCongresso'),
+                      '${'Congresso Regional'.toUpperCase()}\n$dataCongresso'),
                   _EventsGridWidget(
                       'https://firebasestorage.googleapis.com/v0/b/pqcambui-41a18.appspot.com/o/images%2FAssembleias_2024.jpg?alt=media&token=d115111d-e482-4d6a-b42f-2a70add09f56',
-                      'Assembléias de Circuito\nCom Representante de Betel - $dataAssembleiaDataRepresentante\nCom Superintendente de Circuito - $dataAssembleiaDataViajante'),
+                      '${'Assembléias de Circuito'.toUpperCase()}\nCom Representante de Betel - $dataAssembleiaDataRepresentante\nCom Superintendente de Circuito - $dataAssembleiaDataViajante'),
                   _EventsGridWidget(
                       'https://publicdomainvectors.org/photos/1534903384.png',
-                      'Visita do casal viajante\nIrmãos Almir e Rose\n$dataVisita'),
+                      '${'Visita do casal viajante'.toUpperCase()}\nde $dataVisita'),
                   _EventsGridWidget(
                       'https://assetsnffrgf-a.akamaihd.net/assets/m/202023101/univ/art/202023101_univ_lsr_lg.jpg',
-                      '\nCelebração da Morte de Jesus Cristo\n${DateFormat("dd 'de' MMMM 'de' yyy", 'pt_BR').format(evento!.celebracaoData)}'),
+                      '${'Celebração da Morte de Jesus Cristo'.toUpperCase()}\n${DateFormat("dd 'de' MMMM 'de' yyy", 'pt_BR').format(evento!.celebracaoData)}'),
                 ],
               ),
         // floatingActionButton: FloatingActionButton(
@@ -147,7 +147,7 @@ class _EventsGridWidget extends StatelessWidget {
           Text(
             texto,
             style: TextStyle(
-              fontSize: 18,
+              fontSize: 14,
               fontWeight: FontWeight.w400,
               color: CustomColors.customContrastColor,
             ),

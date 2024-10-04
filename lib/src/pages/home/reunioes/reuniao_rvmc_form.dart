@@ -32,6 +32,9 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
   final _terceiraMinisterioTemaFocus = FocusNode();
   final _terceiraMinisterioDesignado1Focus = FocusNode();
   final _terceiraMinisterioDesignado2Focus = FocusNode();
+  final _quartaMinisterioTemaFocus = FocusNode();
+  final _quartaMinisterioDesignado1Focus = FocusNode();
+  final _quartaMinisterioDesignado2Focus = FocusNode();
   final _primeiraVidaCristaTemaFocus = FocusNode();
   final _primeiraVidaCristaDesignadoFocus = FocusNode();
   final _segundaVidaCristaTemaFocus = FocusNode();
@@ -148,6 +151,11 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
             reuniaoRvmc.terceiraMinisterioDesignado1;
         _formData['terceiraMinisterioDesignado2'] =
             reuniaoRvmc.terceiraMinisterioDesignado2;
+        _formData['quartaMinisterioTema'] = reuniaoRvmc.quartaMinisterioTema;
+        _formData['quartaMinisterioDesignado1'] =
+            reuniaoRvmc.quartaMinisterioDesignado1;
+        _formData['quartaMinisterioDesignado2'] =
+            reuniaoRvmc.quartaMinisterioDesignado2;
         _formData['primeiraVidaCristaTema'] =
             reuniaoRvmc.primeiraVidaCristaTema;
         _formData['primeiraVidaCristaDesignado'] =
@@ -187,6 +195,9 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
     _terceiraMinisterioTemaFocus.dispose();
     _terceiraMinisterioDesignado1Focus.dispose();
     _terceiraMinisterioDesignado2Focus.dispose();
+    _quartaMinisterioTemaFocus.dispose();
+    _quartaMinisterioDesignado1Focus.dispose();
+    _quartaMinisterioDesignado2Focus.dispose();
     _primeiraVidaCristaTemaFocus.dispose();
     _primeiraVidaCristaDesignadoFocus.dispose();
     _segundaVidaCristaTemaFocus.dispose();
@@ -219,6 +230,8 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
         _formData['segundaMinisterioDesignado1'] == null ||
         _formData['terceiraMinisterioTema'] == null ||
         _formData['terceiraMinisterioDesignado1'] == null ||
+        _formData['quartaMinisterioTema'] == null ||
+        _formData['quartaMinisterioDesignado1'] == null ||
         _formData['primeiraVidaCristaTema'] == null ||
         _formData['primeiraVidaCristaDesignado'] == null ||
         _formData['segundaVidaCristaTema'] == null ||
@@ -348,7 +361,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                               width: larguraCampo,
                                               child: DropdownButton2(
                                                 focusNode: _presidenteFocus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: _tamanhoFonte,
@@ -372,9 +384,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                         value as String;
                                                   });
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
                                                 autofocus: true,
                                               ),
                                             ),
@@ -404,7 +413,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                               width: larguraCampo,
                                               child: DropdownButton2(
                                                 focusNode: _tesourosFocus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: _tamanhoFonte,
@@ -428,9 +436,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                         value as String;
                                                   });
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
                                                 autofocus: true,
                                               ),
                                             ),
@@ -453,7 +458,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                               width: larguraCampo,
                                               child: DropdownButton2(
                                                 focusNode: _joiasFocus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: _tamanhoFonte,
@@ -477,9 +481,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                         value as String;
                                                   });
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
                                                 autofocus: true,
                                               ),
                                             ),
@@ -502,7 +503,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                               width: larguraCampo,
                                               child: DropdownButton2(
                                                 focusNode: _leituraBibliaFocus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: _tamanhoFonte,
@@ -530,9 +530,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                         value as String;
                                                   });
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
                                                 autofocus: true,
                                               ),
                                             ),
@@ -614,7 +611,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                               child: DropdownButton2(
                                                 focusNode:
                                                     _primeiraMinisterioDesignado1Focus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: _tamanhoFonte,
@@ -639,9 +635,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                         value as String;
                                                   });
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
                                                 autofocus: true,
                                               ),
                                             ),
@@ -665,7 +658,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                               child: DropdownButton2(
                                                 focusNode:
                                                     _primeiraMinisterioDesignado2Focus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: _tamanhoFonte,
@@ -690,9 +682,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                         value as String;
                                                   });
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
                                                 autofocus: true,
                                               ),
                                             ),
@@ -769,7 +758,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                               child: DropdownButton2(
                                                 focusNode:
                                                     _segundaMinisterioDesignado1Focus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: _tamanhoFonte,
@@ -794,9 +782,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                         value as String;
                                                   });
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
                                                 autofocus: true,
                                               ),
                                             ),
@@ -820,7 +805,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                               child: DropdownButton2(
                                                 focusNode:
                                                     _segundaMinisterioDesignado2Focus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: _tamanhoFonte,
@@ -849,9 +833,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                         value as String;
                                                   });
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
                                                 autofocus: true,
                                               ),
                                             ),
@@ -914,7 +895,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                               child: DropdownButton2(
                                                 focusNode:
                                                     _terceiraMinisterioDesignado1Focus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: _tamanhoFonte,
@@ -940,9 +920,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                         value as String;
                                                   });
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
                                                 autofocus: true,
                                               ),
                                             ),
@@ -966,7 +943,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                               child: DropdownButton2(
                                                 focusNode:
                                                     _terceiraMinisterioDesignado2Focus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: _tamanhoFonte,
@@ -991,9 +967,141 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                         value as String;
                                                   });
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
+                                                autofocus: true,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+
+                                      const Divider(thickness: 2),
+
+                                      // TEMA QUARTA PARTE FAÇA SEU MELHOR NO MINISTÉRIO
+                                      Row(
+                                        children: [
+                                          SizedBox(
+                                            width: 125,
+                                            child: Text('Designação: ',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.w600,
+                                                    fontSize: _tamanhoFonte)),
+                                          ),
+                                          Container(
+                                            margin: const EdgeInsets.only(
+                                                bottom: 10),
+                                            // height: 70,
+                                            width: larguraCampo,
+                                            child: TextFormField(
+                                              initialValue: _formData[
+                                                      'quartaMinisterioTema']
+                                                  ?.toString(),
+                                              style: TextStyle(
+                                                  fontSize: _tamanhoFonte),
+                                              //maxLines: 2,
+                                              textInputAction:
+                                                  TextInputAction.next,
+                                              focusNode:
+                                                  _quartaMinisterioTemaFocus,
+                                              onFieldSubmitted: (_) {
+                                                FocusScope.of(context).requestFocus(
+                                                    _quartaMinisterioDesignado1Focus);
+                                              },
+                                              onSaved: (value) => _formData[
+                                                      'quartaMinisterioTema'] =
+                                                  value ?? '',
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+
+                                      // DESIGNADO1 QUARTA PARTE FAÇA SEU MELHOR NO MINISTÉRIO
+                                      Row(
+                                        children: [
+                                          SizedBox(
+                                            width: 125,
+                                            child: Text('Designado1: ',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.w600,
+                                                    fontSize: _tamanhoFonte)),
+                                          ),
+                                          DropdownButtonHideUnderline(
+                                            child: SizedBox(
+                                              width: larguraCampo,
+                                              child: DropdownButton2(
+                                                focusNode:
+                                                    _quartaMinisterioDesignado1Focus,
+                                                hint: Text('Selecione',
+                                                    style: TextStyle(
+                                                        fontSize: _tamanhoFonte,
+                                                        color: Theme.of(context)
+                                                            .hintColor)),
+                                                items: publicadores
+                                                    .toList()
+                                                    .map((item) => DropdownMenuItem<
+                                                            String>(
+                                                        value: item.nome,
+                                                        child: Text(item.nome,
+                                                            style: TextStyle(
+                                                                fontSize:
+                                                                    _tamanhoFonte))))
+                                                    .toList(),
+                                                value: _formData[
+                                                    'quartaMinisterioDesignado1'],
+                                                isDense: true,
+                                                onChanged: (value) {
+                                                  setState(() {
+                                                    _formData[
+                                                            'quartaMinisterioDesignado1'] =
+                                                        value as String;
+                                                  });
+                                                },
+                                                autofocus: true,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+
+                                      // DESIGNADO2 QUARTA PARTE FAÇA SEU MELHOR NO MINISTÉRIO
+                                      Row(
+                                        children: [
+                                          SizedBox(
+                                            width: 125,
+                                            child: Text('Designado2: ',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.w600,
+                                                    fontSize: _tamanhoFonte)),
+                                          ),
+                                          DropdownButtonHideUnderline(
+                                            child: SizedBox(
+                                              width: larguraCampo,
+                                              child: DropdownButton2(
+                                                focusNode:
+                                                    _quartaMinisterioDesignado2Focus,
+                                                hint: Text('Selecione',
+                                                    style: TextStyle(
+                                                        fontSize: _tamanhoFonte,
+                                                        color: Theme.of(context)
+                                                            .hintColor)),
+                                                items: publicadores
+                                                    .map((item) => DropdownMenuItem<
+                                                            String>(
+                                                        value: item.nome,
+                                                        child: Text(item.nome,
+                                                            style: TextStyle(
+                                                                fontSize:
+                                                                    _tamanhoFonte))))
+                                                    .toList(),
+                                                value: _formData[
+                                                    'quartaMinisterioDesignado2'],
+                                                isDense: true,
+                                                onChanged: (value) {
+                                                  setState(() {
+                                                    _formData[
+                                                            'quartaMinisterioDesignado2'] =
+                                                        value as String;
+                                                  });
+                                                },
                                                 autofocus: true,
                                               ),
                                             ),
@@ -1080,7 +1188,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                               child: DropdownButton2(
                                                 focusNode:
                                                     _primeiraVidaCristaDesignadoFocus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: _tamanhoFonte,
@@ -1105,9 +1212,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                         value as String;
                                                   });
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
                                                 autofocus: true,
                                               ),
                                             ),
@@ -1174,7 +1278,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                               child: DropdownButton2(
                                                 focusNode:
                                                     _segundaVidaCristaDesignadoFocus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: _tamanhoFonte,
@@ -1199,9 +1302,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                         value as String;
                                                   });
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
                                                 autofocus: true,
                                               ),
                                             ),
@@ -1225,7 +1325,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                               width: larguraCampo,
                                               child: DropdownButton2(
                                                 focusNode: _estudoBiblicoFocus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: _tamanhoFonte,
@@ -1249,9 +1348,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                         value as String;
                                                   });
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
                                                 autofocus: true,
                                               ),
                                             ),
@@ -1275,7 +1371,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                               child: DropdownButton2(
                                                 focusNode:
                                                     _leituraEstudoBiblicoFocus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: _tamanhoFonte,
@@ -1304,9 +1399,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                         value as String;
                                                   });
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
                                                 autofocus: true,
                                               ),
                                             ),
@@ -1329,7 +1421,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                               width: larguraCampo,
                                               child: DropdownButton2(
                                                 focusNode: _oracaoFinalFocus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: _tamanhoFonte,
@@ -1358,9 +1449,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                         value as String;
                                                   });
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
                                                 autofocus: true,
                                               ),
                                             ),
@@ -1386,10 +1474,9 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                         children: [
                                           DropdownButtonHideUnderline(
                                             child: SizedBox(
-                                              width: 180,
+                                              width: 200,
                                               child: DropdownButton2(
                                                 focusNode: _indicador1Focus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: 13,
@@ -1403,7 +1490,7 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                             style:
                                                                 const TextStyle(
                                                                     fontSize:
-                                                                        13))))
+                                                                        12))))
                                                     .toList(),
                                                 value: _formData['indicador1'],
                                                 onChanged: (value) {
@@ -1414,19 +1501,15 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                     },
                                                   );
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
                                                 autofocus: true,
                                               ),
                                             ),
                                           ),
                                           DropdownButtonHideUnderline(
                                             child: SizedBox(
-                                              width: 180,
+                                              width: 200,
                                               child: DropdownButton2(
                                                 focusNode: _indicador2Focus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: 13,
@@ -1440,7 +1523,7 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                             style:
                                                                 const TextStyle(
                                                                     fontSize:
-                                                                        13))))
+                                                                        12))))
                                                     .toList(),
                                                 value: _formData['indicador2'],
                                                 onChanged: (value) {
@@ -1451,9 +1534,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                     },
                                                   );
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
                                                 autofocus: true,
                                               ),
                                             ),
@@ -1472,10 +1552,9 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                         children: [
                                           DropdownButtonHideUnderline(
                                             child: SizedBox(
-                                              width: 180,
+                                              width: 200,
                                               child: DropdownButton2(
                                                 focusNode: _volante1Focus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: 13,
@@ -1489,7 +1568,7 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                             style:
                                                                 const TextStyle(
                                                                     fontSize:
-                                                                        13))))
+                                                                        12))))
                                                     .toList(),
                                                 value: _formData['volante1'],
                                                 onChanged: (value) {
@@ -1500,19 +1579,15 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                     },
                                                   );
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
                                                 autofocus: true,
                                               ),
                                             ),
                                           ),
                                           DropdownButtonHideUnderline(
                                             child: SizedBox(
-                                              width: 180,
+                                              width: 200,
                                               child: DropdownButton2(
                                                 focusNode: _volante2Focus,
-                                                dropdownElevation: 12,
                                                 hint: Text('Selecione',
                                                     style: TextStyle(
                                                         fontSize: 13,
@@ -1526,7 +1601,7 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                             style:
                                                                 const TextStyle(
                                                                     fontSize:
-                                                                        13))))
+                                                                        12))))
                                                     .toList(),
                                                 value: _formData['volante2'],
                                                 onChanged: (value) {
@@ -1537,9 +1612,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                     },
                                                   );
                                                 },
-                                                buttonHeight: 30,
-                                                buttonWidth: 10,
-                                                itemHeight: 30,
                                                 autofocus: true,
                                               ),
                                             ),
@@ -1554,10 +1626,9 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                       ),
                                       DropdownButtonHideUnderline(
                                         child: SizedBox(
-                                          width: 180,
+                                          width: 200,
                                           child: DropdownButton2(
                                             focusNode: _midiasFocus,
-                                            dropdownElevation: 12,
                                             hint: Text('Selecione',
                                                 style: TextStyle(
                                                     fontSize: 13,
@@ -1571,7 +1642,7 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                             style:
                                                                 const TextStyle(
                                                                     fontSize:
-                                                                        13))))
+                                                                        12))))
                                                 .toList(),
                                             value: _formData['midias'],
                                             onChanged: (value) {
@@ -1582,9 +1653,6 @@ class _ReuniaoRvmcFormState extends State<ReuniaoRvmcForm> {
                                                 },
                                               );
                                             },
-                                            buttonHeight: 30,
-                                            buttonWidth: 10,
-                                            itemHeight: 30,
                                             autofocus: true,
                                           ),
                                         ),

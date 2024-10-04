@@ -54,6 +54,15 @@ class ReuniaoRvmcList with ChangeNotifier {
               codificador(dataDados['terceiraMinisterioDesignado1'], false),
           terceiraMinisterioDesignado2:
               codificador(dataDados['terceiraMinisterioDesignado2'], false),
+          quartaMinisterioTema: dataDados['quartaMinisterioTema'] ?? '',
+          quartaMinisterioDesignado1:
+              dataDados['quartaMinisterioDesignado1'] == null
+                  ? 'sem_designação'
+                  : codificador(dataDados['quartaMinisterioDesignado1'], false),
+          quartaMinisterioDesignado2:
+              dataDados['quartaMinisterioDesignado2'] == null
+                  ? 'sem_designação'
+                  : codificador(dataDados['quartaMinisterioDesignado2'], false),
           primeiraVidaCristaTema: dataDados['primeiraVidaCristaTema'],
           primeiraVidaCristaDesignado:
               codificador(dataDados['primeiraVidaCristaDesignado'], false),
@@ -101,6 +110,9 @@ class ReuniaoRvmcList with ChangeNotifier {
           data['terceiraMinisterioDesignado1'] as String,
       terceiraMinisterioDesignado2:
           data['terceiraMinisterioDesignado2'] as String,
+      quartaMinisterioTema: data['quartaMinisterioTema'] as String,
+      quartaMinisterioDesignado1: data['quartaMinisterioDesignado1'] as String,
+      quartaMinisterioDesignado2: data['quartaMinisterioDesignado2'] as String,
       primeiraVidaCristaTema: data['primeiraVidaCristaTema'] as String,
       primeiraVidaCristaDesignado:
           data['primeiraVidaCristaDesignado'] as String,
@@ -150,6 +162,11 @@ class ReuniaoRvmcList with ChangeNotifier {
             codificador(reuniaoRvmc.terceiraMinisterioDesignado1, true),
         'terceiraMinisterioDesignado2':
             codificador(reuniaoRvmc.terceiraMinisterioDesignado2, true),
+        'quartaMinisterioTema': reuniaoRvmc.quartaMinisterioTema,
+        'quartaMinisterioDesignado1':
+            codificador(reuniaoRvmc.quartaMinisterioDesignado1, true),
+        'quartaMinisterioDesignado2':
+            codificador(reuniaoRvmc.quartaMinisterioDesignado2, true),
         'primeiraVidaCristaTema': reuniaoRvmc.primeiraVidaCristaTema,
         'primeiraVidaCristaDesignado':
             codificador(reuniaoRvmc.primeiraVidaCristaDesignado, true),
@@ -186,6 +203,9 @@ class ReuniaoRvmcList with ChangeNotifier {
       terceiraMinisterioTema: reuniaoRvmc.terceiraMinisterioTema,
       terceiraMinisterioDesignado1: reuniaoRvmc.terceiraMinisterioDesignado1,
       terceiraMinisterioDesignado2: reuniaoRvmc.terceiraMinisterioDesignado2,
+      quartaMinisterioTema: reuniaoRvmc.quartaMinisterioTema,
+      quartaMinisterioDesignado1: reuniaoRvmc.quartaMinisterioDesignado1,
+      quartaMinisterioDesignado2: reuniaoRvmc.quartaMinisterioDesignado2,
       primeiraVidaCristaTema: reuniaoRvmc.primeiraVidaCristaTema,
       primeiraVidaCristaDesignado: reuniaoRvmc.primeiraVidaCristaDesignado,
       segundaVidaCristaTema: reuniaoRvmc.segundaVidaCristaTema,
@@ -233,6 +253,12 @@ class ReuniaoRvmcList with ChangeNotifier {
               codificador(reuniaoRvmc.terceiraMinisterioDesignado1, true),
           'terceiraMinisterioDesignado2':
               codificador(reuniaoRvmc.terceiraMinisterioDesignado2, true),
+
+          'quartaMinisterioTema': reuniaoRvmc.quartaMinisterioTema,
+          'quartaMinisterioDesignado1':
+              codificador(reuniaoRvmc.quartaMinisterioDesignado1, true),
+          'quartaMinisterioDesignado2':
+              codificador(reuniaoRvmc.quartaMinisterioDesignado2, true),
 
           'primeiraVidaCristaTema': reuniaoRvmc.primeiraVidaCristaTema,
           'primeiraVidaCristaDesignado':

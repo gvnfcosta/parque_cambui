@@ -302,7 +302,6 @@ class _TerritoriesFormPageState extends State<TerritoriesFormPage> {
                                   height: 40,
                                   child: DropdownButton2(
                                     focusNode: publicadorFocus,
-                                    dropdownElevation: 12,
                                     hint: Text('Selecione',
                                         style: TextStyle(
                                             fontSize: 14,
@@ -327,9 +326,6 @@ class _TerritoriesFormPageState extends State<TerritoriesFormPage> {
                                             publicador.nome == value);
                                       });
                                     },
-                                    buttonHeight: 30,
-                                    buttonWidth: 10,
-                                    itemHeight: 30,
                                     autofocus: true,
                                   ),
                                 ),
