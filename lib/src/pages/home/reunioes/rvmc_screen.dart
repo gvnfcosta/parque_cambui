@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:parquecambui/src/models/reuniao_rvmc_model.dart';
 import 'package:provider/provider.dart';
 import '/src/pages/common_widgets/card_divisor.dart';
 import '/src/pages/common_widgets/custom_text_field.dart';
@@ -117,42 +118,22 @@ class _RvmcScreenState extends State<RvmcScreen> {
                   readOnly: readOnly),
               const CardDivisor('FAÇA SEU MELHOR NO MINISTÉRIO',
                   backColor: Color.fromARGB(255, 150, 150, 0)),
-              CustomTextField(
-                  icon: reuniaoSelecionada.primeiraMinisterioTema !=
-                          'Primeira Conversa'
-                      ? Icons.people
-                      : Icons.person,
-                  label: reuniaoSelecionada.primeiraMinisterioTema,
-                  initialValue: reuniaoSelecionada.primeiraMinisterioTema
-                              .contains('Vídeo') ||
-                          reuniaoSelecionada.primeiraMinisterioDesignado2
-                              .contains('sem_designação')
-                      ? reuniaoSelecionada.primeiraMinisterioDesignado1
-                      : '${reuniaoSelecionada.primeiraMinisterioDesignado1}  e  ${reuniaoSelecionada.primeiraMinisterioDesignado2}',
-                  readOnly: readOnly),
-              CustomTextField(
-                  icon: reuniaoSelecionada.segundaMinisterioTema !=
-                          'Segunda Conversa'
-                      ? Icons.people
-                      : Icons.person,
-                  label: reuniaoSelecionada.segundaMinisterioTema,
-                  initialValue: reuniaoSelecionada.segundaMinisterioTema != ''
-                      ? '${reuniaoSelecionada.segundaMinisterioDesignado1}  e  ${reuniaoSelecionada.segundaMinisterioDesignado2}'
-                      : reuniaoSelecionada.segundaMinisterioDesignado2
-                              .contains('sem_designação')
-                          ? reuniaoSelecionada.segundaMinisterioDesignado1
-                          : null,
-                  readOnly: readOnly),
-              CustomTextField(
-                  icon: reuniaoSelecionada.terceiraMinisterioTema != 'Discurso'
-                      ? Icons.people
-                      : Icons.person,
-                  label: reuniaoSelecionada.terceiraMinisterioTema,
-                  initialValue: reuniaoSelecionada.terceiraMinisterioTema !=
-                          'Discurso'
-                      ? '${reuniaoSelecionada.terceiraMinisterioDesignado1}  e  ${reuniaoSelecionada.terceiraMinisterioDesignado2}'
-                      : reuniaoSelecionada.terceiraMinisterioDesignado1,
-                  readOnly: readOnly),
+              parteValid(
+                  reuniaoSelecionada.primeiraMinisterioTema,
+                  reuniaoSelecionada.primeiraMinisterioDesignado1,
+                  reuniaoSelecionada.primeiraMinisterioDesignado2),
+              parteValid(
+                  reuniaoSelecionada.segundaMinisterioTema,
+                  reuniaoSelecionada.segundaMinisterioDesignado1,
+                  reuniaoSelecionada.segundaMinisterioDesignado2),
+              parteValid(
+                  reuniaoSelecionada.terceiraMinisterioTema,
+                  reuniaoSelecionada.terceiraMinisterioDesignado1,
+                  reuniaoSelecionada.terceiraMinisterioDesignado2),
+              parteValid(
+                  reuniaoSelecionada.quartaMinisterioTema,
+                  reuniaoSelecionada.quartaMinisterioDesignado1,
+                  reuniaoSelecionada.quartaMinisterioDesignado2),
               const CardDivisor('NOSSA VIDA CRISTÃ',
                   backColor: Color.fromARGB(255, 140, 0, 0)),
               CustomTextField(
@@ -201,6 +182,16 @@ class _RvmcScreenState extends State<RvmcScreen> {
         ),
       ),
     );
+  }
+
+  CustomTextField parteValid(
+      String tema, String designado1, String designado2) {
+    bool solo = designado2.contains('sem_designação');
+    return CustomTextField(
+        icon: solo ? Icons.person : Icons.people,
+        label: tema,
+        initialValue: solo ? designado1 : '$designado1  e  $designado2',
+        readOnly: readOnly);
   }
 
   _removeDialog(dataField) {

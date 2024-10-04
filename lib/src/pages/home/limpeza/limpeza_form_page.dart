@@ -163,7 +163,6 @@ class LimpezaFormState extends State<LimpezaForm> {
                                           width: 250,
                                           child: DropdownButton2(
                                             focusNode: _descricaoAtividadeFocus,
-                                            dropdownElevation: 12,
                                             hint: Text('Selecione',
                                                 style: TextStyle(
                                                     fontSize: 14,
@@ -191,9 +190,6 @@ class LimpezaFormState extends State<LimpezaForm> {
                                                     grupo.nome == value);
                                               });
                                             },
-                                            buttonHeight: 30,
-                                            buttonWidth: 10,
-                                            itemHeight: 30,
                                             autofocus: true,
                                           ),
                                         ),

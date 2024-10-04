@@ -75,7 +75,6 @@ class _GruposTabState extends State<GruposTab> {
                           child: SizedBox(
                             width: 150,
                             child: DropdownButton2(
-                              dropdownElevation: 12,
                               hint: Text('Selecione',
                                   style: TextStyle(
                                       fontSize: 14,
@@ -95,9 +94,6 @@ class _GruposTabState extends State<GruposTab> {
                               isDense: true,
                               onChanged: (value) => setState(
                                   () => selectedGrupo = value as String),
-                              buttonHeight: 30,
-                              buttonWidth: 10,
-                              itemHeight: 30,
                               autofocus: true,
                             ),
                           ),

@@ -17,6 +17,9 @@ class ReuniaoRvmc with ChangeNotifier {
   final String terceiraMinisterioTema;
   final String terceiraMinisterioDesignado1;
   final String terceiraMinisterioDesignado2;
+  final String quartaMinisterioTema;
+  final String quartaMinisterioDesignado1;
+  final String quartaMinisterioDesignado2;
 
   final String primeiraVidaCristaTema;
   final String primeiraVidaCristaDesignado;
@@ -49,6 +52,9 @@ class ReuniaoRvmc with ChangeNotifier {
     required this.terceiraMinisterioTema,
     required this.terceiraMinisterioDesignado1,
     required this.terceiraMinisterioDesignado2,
+    required this.quartaMinisterioTema,
+    required this.quartaMinisterioDesignado1,
+    required this.quartaMinisterioDesignado2,
     required this.primeiraVidaCristaTema,
     required this.primeiraVidaCristaDesignado,
     required this.segundaVidaCristaTema,

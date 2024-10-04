@@ -290,9 +290,7 @@ class _PublisherCartSendPageState extends State<PublisherCartSendPage> {
                                       child: SizedBox(
                                         height: 40,
                                         child: DropdownButton2(
-                                          focusColor: Colors.white,
                                           focusNode: publisherFocus,
-                                          dropdownElevation: 12,
                                           hint: Text('Selecione',
                                               style: TextStyle(
                                                   fontSize: 14,
@@ -321,9 +319,6 @@ class _PublisherCartSendPageState extends State<PublisherCartSendPage> {
                                                       publicador.nome == value);
                                             });
                                           },
-                                          buttonHeight: 30,
-                                          buttonWidth: 10,
-                                          itemHeight: 30,
                                           autofocus: true,
                                         ),
                                       ),

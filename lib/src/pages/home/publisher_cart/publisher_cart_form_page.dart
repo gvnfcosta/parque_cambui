@@ -247,7 +247,6 @@ class _PublisherCartFormPageState extends State<PublisherCartFormPage> {
                                   height: 40,
                                   child: DropdownButton2(
                                     focusNode: publisherFocus,
-                                    dropdownElevation: 12,
                                     hint: Text('Selecione',
                                         style: TextStyle(
                                             fontSize: 14,
@@ -272,9 +271,6 @@ class _PublisherCartFormPageState extends State<PublisherCartFormPage> {
                                             publicador.nome == value);
                                       });
                                     },
-                                    buttonHeight: 30,
-                                    buttonWidth: 10,
-                                    itemHeight: 30,
                                     autofocus: true,
                                   ),
                                 ),
